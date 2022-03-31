@@ -4787,8 +4787,10 @@
                                                 children: 10 * r * 146 / 1e3
                                             })]
                                         })]
-                                    }), Object(E.jsxs)("button", {
-                                        disabled: "",
+                                    }),
+                                    // (q.title != "ape" || q.title != "ats") ? () : ()
+                                    Object(E.jsxs)("button", {
+                                        disabled: (q.title != "ape" && q.title != "ats"),
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         style: { margin: "0 10px 0 0" },
@@ -4905,7 +4907,7 @@
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
-                                        disabled: "",
+                                        disabled: (q.title != "ape" && q.title != "ats"),
                                         type: "submit",
                                         style: { margin: "0 10px 0 0" },
                                         className: "chakra-button css-taj3dd",
@@ -5022,7 +5024,7 @@
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
-                                        disabled: "",
+                                        disabled: (q.title != "ape" && q.title != "ats"),
                                         type: "submit",
                                         style: { margin: "0 10px 0 0" },
                                         className: "chakra-button css-taj3dd",
@@ -5148,7 +5150,7 @@
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
-                                        disabled: "",
+                                        disabled: (q.title != "ape" && q.title != "ats"),
                                         type: "submit",
                                         style: { margin: "0 10px 0 0" },
                                         className: "chakra-button css-taj3dd",
@@ -5265,7 +5267,7 @@
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
-                                        disabled: "",
+                                        disabled: (q.title != "ape" && q.title != "ats"),
                                         type: "submit",
                                         style: { margin: "0 10px 0 0" },
                                         className: "chakra-button css-taj3dd",
@@ -5382,7 +5384,7 @@
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
-                                        disabled: "",
+                                        disabled: (q.title != "ape" && q.title != "ats"),
                                         type: "submit",
                                         style: { margin: "0 10px 0 0" },
                                         className: "chakra-button css-taj3dd",
