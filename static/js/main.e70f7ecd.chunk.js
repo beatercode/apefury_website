@@ -3316,7 +3316,7 @@
                                     children: Object(E.jsx)("img", {
                                         src: "assets/images/logo.png",
                                         style: {
-                                            width: "280px"
+                                            width: "420px"
                                         }
                                     })
                                 }), Object(E.jsx)("div", {
