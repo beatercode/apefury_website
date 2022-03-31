@@ -569,28 +569,6 @@ body {
     overflow: hidden;
 }
 
-.css-taj3dd:before {
-    content: "";
-    position: absolute;
-    height: 150%;
-    top: -60%;
-    width: 0px;
-    background: #3b77e600;
-    box-shadow: -10px -10px 10px 10px rgba(17, 59, 248, 0.801);
-    filter: blur(1px);
-    opacity: 0.8;
-    transition: 0.8s;
-    transform: rotate(-20deg) translateX(-60px);
-  }
-
-.css-taj3dd:hover:before {
-    transform: rotate(-20deg) translate(140px, 70px);
-  }
-
-.css-taj3dd:hover {
-    color: #2c3e50;
-}
-
 .css-1hzyiq5 {
     display: inline-flex;
     align-self: center;
@@ -924,6 +902,10 @@ select {
 
 .eth.op {
     background-color: rgba(87, 139, 223, 0.48)
+}
+
+.ats.op {
+    background-color: rgba(59, 131, 248, 0.48)
 }
 
 .ape.op {

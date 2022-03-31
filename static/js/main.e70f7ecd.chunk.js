@@ -20,6 +20,7 @@
         583: function (e, t) { },
         584: function (e, t) { },
         909: function (e, t, n) {
+            console.log(n(21));
             "use strict";
             n.r(t);
             var a = n(7),
@@ -892,6 +893,879 @@
                         "type": "function"
                     }
                 ],
+                Nt = [
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address payable",
+                                "name": "_commissionWallet",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "_tokenAddr",
+                                "type": "address"
+                            }
+                        ],
+                        "stateMutability": "nonpayable",
+                        "type": "constructor"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "totalAmount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "FeePayed",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint8",
+                                "name": "plan",
+                                "type": "uint8"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "percent",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "profit",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "start",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "finish",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "NewDeposit",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "Newbie",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "referrer",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "referral",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": true,
+                                "internalType": "uint256",
+                                "name": "level",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "RefBonus",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "Withdrawn",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "FORCE_WITHDRAW_PENALTY",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "INVEST_MAX_AMOUNT",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "INVEST_MIN_AMOUNT",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "LAUNCHED",
+                        "outputs": [
+                            {
+                                "internalType": "bool",
+                                "name": "",
+                                "type": "bool"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "PERCENTS_DIVIDER",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "PERCENT_STEP",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "PROJECT_FEE",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "REFERRAL_PERCENTS",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "TIME_STEP",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "WITHDRAW_FEE",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "index",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "forceWithdraw",
+                        "outputs": [
+
+                        ],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "getContractBalance",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "getContractInfo",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint8",
+                                "name": "plan",
+                                "type": "uint8"
+                            }
+                        ],
+                        "name": "getPercent",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint8",
+                                "name": "plan",
+                                "type": "uint8"
+                            }
+                        ],
+                        "name": "getPlanInfo",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "time",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "percent",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint8",
+                                "name": "plan",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "deposit",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getResult",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "percent",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "profit",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "finish",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserAmountOfDeposits",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserAvailable",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserCheckpoint",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "index",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getUserDepositInfo",
+                        "outputs": [
+                            {
+                                "internalType": "uint8",
+                                "name": "plan",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "percent",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "profit",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "start",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "finish",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserDividends",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserDownlineCount",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "addr",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserInfo",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserReferralBonus",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserReferralTotalBonus",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserReferralWithdrawn",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserReferrer",
+                        "outputs": [
+                            {
+                                "internalType": "address",
+                                "name": "",
+                                "type": "address"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserTotalDeposits",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserTotalWithdrawn",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserWithdrawn",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address payable",
+                                "name": "referrer",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint8",
+                                "name": "plan",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "invest",
+                        "outputs": [
+
+                        ],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "launch",
+                        "outputs": [
+
+                        ],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "startUNIX",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "token",
+                        "outputs": [
+                            {
+                                "internalType": "contract IERC20",
+                                "name": "",
+                                "type": "address"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "totalRefBonus",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "totalStaked",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "totalUsers",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+
+                        ],
+                        "name": "withdraw",
+                        "outputs": [
+
+                        ],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    }
+                ],
                 T = {
                     bts: {
                         contract: "0x033433387463133E76b9a45DB7FB500362D365b3",
@@ -1029,8 +1903,42 @@
                             blockExplorerUrls: ["https://etherscan.io/"]
                         }]
                     },
+                    ats: {
+                        contract: "0xA2B5fb9C0eA6FfFEaAbe1846ED3b2596A85D34f2",
+                        chainId: "1",
+                        projectId: "46",
+                        color: "F3BA2F",
+                        bonusamount: 0,
+                        displaydecimals: 2,
+                        logoname: "ape.png",
+                        fullName: "Ropsten",
+                        ABI: Nt,
+                        mindeposit: 10,
+                        txnfee: 10,
+                        mintransactionamount: 1,
+                        maxtransactionamount: 1000,
+                        title: "ats",
+                        rpcURl: "https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+                        explorerlink: ["https://ropsten.etherscan.io/"],
+                        blockchain: "Ropsten",
+                        type: "0",
+                        tokenId: "apecoin",
+                        unit: "ETH",
+                        explorer: "https://ropsten.etherscan.io/",
+                        networkData: [{
+                            chainId: "0x0003",
+                            chainName: "Ethereum Testnet",
+                            rpcUrls: ["https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
+                            nativeCurrency: {
+                                name: "Ethereum",
+                                symbol: "ETH",
+                                decimals: 18
+                            },
+                            blockExplorerUrls: ["https://etherscan.io/"]
+                        }]
+                    },
                     ape: {
-                        contract: "0xb263ffbb2e9bccc82f02c0e27d1dbe7ff15d0649",
+                        contract: "0x1D6f11EC9510d3a1f7C77160cC807ccf1bEBaEC7",
                         chainId: "1",
                         projectId: "43",
                         color: "F3BA2F",
@@ -1038,7 +1946,7 @@
                         displaydecimals: 2,
                         logoname: "ape.png",
                         fullName: "Ethereum",
-                        ABI: N,
+                        ABI: Nt,
                         mindeposit: 10,
                         txnfee: 10,
                         mintransactionamount: 1,
@@ -1049,7 +1957,7 @@
                         blockchain: "Ethereum",
                         type: "0",
                         tokenId: "apecoin",
-                        unit: "APE",
+                        unit: "ETH",
                         explorer: "https://etherscan.io/",
                         networkData: [{
                             chainId: "0x0003",
@@ -2079,7 +2987,8 @@
                                         case 9:
                                             return o = new f.a(i), e.next = 12, o.eth.getAccounts();
                                         case 12:
-                                            if (l = e.sent, !window.ethereum || !0 !== o.currentProvider.isMetaMask || "eth" === Qe.title || "rop" === Qe.title || "ape" === Qe.title) {
+                                            if (l = e.sent, !window.ethereum || !0 !== o.currentProvider.isMetaMask
+                                                || "eth" === Qe.title || "rop" === Qe.title || "ape" === Qe.title || "ats" === Qe.title) {
                                                 e.next = 21;
                                                 break
                                             }
@@ -2601,6 +3510,198 @@
                                 return e.apply(this, arguments)
                             }
                         }(),
+                        WtApprove = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t, n) {
+                                var a, s, r, i, o, d, p, b, h, x;
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            if (!at) {
+                                                e.next = 87;
+                                                break
+                                            }
+                                            if (!(V * n <= Qe.mindeposit)) {
+                                                e.next = 7;
+                                                break
+                                            }
+                                            console.log(n, dt), u.b.warning("minimum deposit is " + C(Qe.mindeposit / V, 5) + "  " + Qe.unit), e.next = 85;
+                                            break;
+                                        case 7:
+                                            if (Qe.title == "ats" || Qe.title == "ape") {
+                                                if ("0" !== Qe.type) {
+                                                    e.next = 14;
+                                                    break
+                                                }
+                                                let valueToSend = l.utils.toWei(n);
+                                                const web3 = new Web3(window.ethereum);
+                                                const tokenAbi = [{ "inputs": [{ "internalType": "string", "name": "name", "type": "string" }, { "internalType": "string", "name": "symbol", "type": "string" }, { "internalType": "uint256", "name": "totalSupply_", "type": "uint256" }], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "subtractedValue", "type": "uint256" }], "name": "decreaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "addedValue", "type": "uint256" }], "name": "increaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "from", "type": "address" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }];
+                                                const contract = new web3.eth.Contract(tokenAbi, '0x57854f181a2e26df9CD47c56032923f51D88d2bF');
+                                                console.log(contract);
+                                                contract.methods.approve("0xA2B5fb9C0eA6FfFEaAbe1846ED3b2596A85D34f2", valueToSend).send({ from: at }).on("receipt", (function (e) {
+                                                    console.log(G), u.b.success(Object(E.jsx)(A, {
+                                                        receipt: e,
+                                                        explorer: Qe.explorer,
+                                                        type: "gameplay"
+                                                    })), Ct(B, l, at), setTimeout((function () {
+                                                        console.log("Hello, World!"), Z(0), ne(-1)
+                                                    }), 3e3)
+                                                }));
+                                            } else {
+                                                if (!(Number(n) < Number(dt))) {
+                                                    e.next = 82;
+                                                    break
+                                                }
+                                                if ("0" !== Qe.type) {
+                                                    e.next = 14;
+                                                    break
+                                                }
+                                                return a = localStorage.getItem("BP_baseRef") ? localStorage.getItem("BP_baseRef") : at, e.next = 12, it.methods.invest(a, t).send({
+                                                    from: at,
+                                                    value: l.utils.toWei(n)
+                                                }, (function (e, t) {
+                                                    Z(e ? 0 : 1)
+                                                })).on("receipt", (function (e) {
+                                                    console.log(G), u.b.success(Object(E.jsx)(A, {
+                                                        receipt: e,
+                                                        explorer: Qe.explorer,
+                                                        type: "gameplay"
+                                                    })), Ct(B, l, at), setTimeout((function () {
+                                                        console.log("Hello, World!"), Z(0), ne(-1)
+                                                    }), 3e3)
+                                                }));
+                                            }
+                                        case 12:
+                                            e.next = 80;
+                                            break;
+                                        case 14:
+                                            if ("2" !== Qe.type) {
+                                                e.next = 31;
+                                                break
+                                            }
+                                            return s = new f.a(Qe.rpcURl), r = new s.eth.Contract(R, Qe.TokenContract), i = 0, e.next = 20, r.methods.allowance(at, Qe.contract).call(function () {
+                                                var e = Object(m.a)(j.a.mark((function e(t, n) {
+                                                    return j.a.wrap((function (e) {
+                                                        for (; ;) switch (e.prev = e.next) {
+                                                            case 0:
+                                                                console.log(" checking approval "), console.log(t), console.log(n), i = S.ethers.utils.formatUnits(n, Qe.TokenDecimals);
+                                                            case 4:
+                                                            case "end":
+                                                                return e.stop()
+                                                        }
+                                                    }), e)
+                                                })));
+                                                return function (t, n) {
+                                                    return e.apply(this, arguments)
+                                                }
+                                            }());
+                                        case 20:
+                                            if (!(Number(i) < Number(n))) {
+                                                e.next = 26;
+                                                break
+                                            }
+                                            o = new f.a(c), new o.eth.Contract(R, Qe.TokenContract).methods.approve(Qe.contract, S.ethers.utils.parseUnits(n, Qe.TokenDecimals)).send({
+                                                feeLimit: 1e8,
+                                                from: at
+                                            }).then((function (e) {
+                                                console.log("  " + Qe.TokenContract), u.b.success("Enable Successfully"), wt("Stake")
+                                            })).catch((function (e) {
+                                                console.error(e)
+                                            })), e.next = 29;
+                                            break;
+                                        case 26:
+                                            return console.log(l.utils.toWei(n)), e.next = 29, it.methods.killking(l.utils.toWei(n)).send({
+                                                from: at
+                                            }, (function (e, t) {
+                                                console.log(e), console.log(t)
+                                            })).on("receipt", (function (e) {
+                                                console.log(e), u.b.success(Object(E.jsx)(A, {
+                                                    receipt: e,
+                                                    explorer: Qe.explorer,
+                                                    type: "invest"
+                                                })), Ct(B, l, at)
+                                            }));
+                                        case 29:
+                                            e.next = 80;
+                                            break;
+                                        case 31:
+                                            if (!window.tronWeb || !window.tronWeb.defaultAddress.base58) {
+                                                e.next = 79;
+                                                break
+                                            }
+                                            if ("usdt" !== Qe.title) {
+                                                e.next = 56;
+                                                break
+                                            }
+                                            return e.prev = 33, d = [{
+                                                type: "uint8",
+                                                value: t
+                                            }, {
+                                                type: "uint256",
+                                                value: window.tronWeb.toSun(n)
+                                            }], p = {
+                                                feeLimit: 2e8
+                                            }, e.next = 38, window.tronWeb.transactionBuilder.triggerSmartContract(Qe.contract, "invest(address,uint8,uint256)", p, d, window.tronWeb.defaultAddress.base58);
+                                        case 38:
+                                            return b = e.sent, e.next = 41, window.tronWeb.trx.sign(b.transaction);
+                                        case 41:
+                                            return h = e.sent, e.next = 44, window.tronWeb.trx.sendRawTransaction(h);
+                                        case 44:
+                                            return x = e.sent, e.next = 47, x.result;
+                                        case 47:
+                                            !0 === e.sent ? u.b.success("Transaction Sent") : u.b.error("Transaction Failed"), e.next = 54;
+                                            break;
+                                        case 51:
+                                            e.prev = 51, e.t0 = e.catch(33), u.b.error("Failed: " + e.t0);
+                                        case 54:
+                                            e.next = 77;
+                                            break;
+                                        case 56:
+                                            return e.prev = 56, d = [{
+                                                type: "uint8",
+                                                value: t
+                                            }], p = {
+                                                feeLimit: 2e8,
+                                                callValue: window.tronWeb.toSun(n)
+                                            }, e.next = 61, window.tronWeb.transactionBuilder.triggerSmartContract(Qe.contract, "invest(address,uint8)", p, d, window.tronWeb.defaultAddress.base58);
+                                        case 61:
+                                            return b = e.sent, e.next = 64, window.tronWeb.trx.sign(b.transaction);
+                                        case 64:
+                                            return h = e.sent, e.next = 67, window.tronWeb.trx.sendRawTransaction(h);
+                                        case 67:
+                                            return x = e.sent, e.next = 70, x.result;
+                                        case 70:
+                                            !0 === e.sent ? u.b.success("Transaction Sent") : u.b.error("Transaction Failed"), e.next = 77;
+                                            break;
+                                        case 74:
+                                            e.prev = 74, e.t1 = e.catch(56), u.b.error("Failed: " + e.t1);
+                                        case 77:
+                                            e.next = 80;
+                                            break;
+                                        case 79:
+                                            u.b.warning("Login Your TRX Wallet");
+                                        case 80:
+                                            e.next = 85;
+                                            break;
+                                        case 82:
+                                            console.log(n, dt), u.b.warning("Your entered amount is more than your balance");
+                                        case 85:
+                                            e.next = 89;
+                                            break;
+                                        case 87:
+                                            u.b.warning("Connect to your wallet"), Mt("wallet");
+                                        case 89:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e, null, [
+                                    [33, 51],
+                                    [56, 74]
+                                ])
+                            })));
+                            return function (t, n) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
                         Wt = function () {
                             var e = Object(m.a)(j.a.mark((function e(t, n) {
                                 var a, s, r, i, o, d, p, b, h, x;
@@ -2618,28 +3719,47 @@
                                             console.log(n, dt), u.b.warning("minimum deposit is " + C(Qe.mindeposit / V, 5) + "  " + Qe.unit), e.next = 85;
                                             break;
                                         case 7:
-                                            if (!(Number(n) < Number(dt))) {
-                                                e.next = 82;
-                                                break
+                                            if (Qe.title == "ats" || Qe.title == "ape") {
+                                                if ("0" !== Qe.type) {
+                                                    e.next = 14;
+                                                    break
+                                                }
+                                                let valueToSend = l.utils.toWei(n);
+                                                return a = localStorage.getItem("BP_baseRef") ? localStorage.getItem("BP_baseRef") : at, e.next = 12, it.methods.invest(a, t, valueToSend).send({
+                                                    from: at
+                                                }).on("receipt", (function (e) {
+                                                    console.log(G), u.b.success(Object(E.jsx)(A, {
+                                                        receipt: e,
+                                                        explorer: Qe.explorer,
+                                                        type: "gameplay"
+                                                    })), Ct(B, l, at), setTimeout((function () {
+                                                        console.log("Hello, World!"), Z(0), ne(-1)
+                                                    }), 3e3)
+                                                }));
+                                            } else {
+                                                if (!(Number(n) < Number(dt))) {
+                                                    e.next = 82;
+                                                    break
+                                                }
+                                                if ("0" !== Qe.type) {
+                                                    e.next = 14;
+                                                    break
+                                                }
+                                                return a = localStorage.getItem("BP_baseRef") ? localStorage.getItem("BP_baseRef") : at, e.next = 12, it.methods.invest(a, t).send({
+                                                    from: at,
+                                                    value: l.utils.toWei(n)
+                                                }, (function (e, t) {
+                                                    Z(e ? 0 : 1)
+                                                })).on("receipt", (function (e) {
+                                                    console.log(G), u.b.success(Object(E.jsx)(A, {
+                                                        receipt: e,
+                                                        explorer: Qe.explorer,
+                                                        type: "gameplay"
+                                                    })), Ct(B, l, at), setTimeout((function () {
+                                                        console.log("Hello, World!"), Z(0), ne(-1)
+                                                    }), 3e3)
+                                                }));
                                             }
-                                            if ("0" !== Qe.type) {
-                                                e.next = 14;
-                                                break
-                                            }
-                                            return a = localStorage.getItem("BP_baseRef") ? localStorage.getItem("BP_baseRef") : at, e.next = 12, it.methods.invest(a, t).send({
-                                                from: at,
-                                                value: l.utils.toWei(n)
-                                            }, (function (e, t) {
-                                                Z(e ? 0 : 1)
-                                            })).on("receipt", (function (e) {
-                                                console.log(G), u.b.success(Object(E.jsx)(A, {
-                                                    receipt: e,
-                                                    explorer: Qe.explorer,
-                                                    type: "gameplay"
-                                                })), Ct(B, l, at), setTimeout((function () {
-                                                    console.log("Hello, World!"), Z(0), ne(-1)
-                                                }), 3e3)
-                                            }));
                                         case 12:
                                             e.next = 80;
                                             break;
@@ -2922,6 +4042,7 @@
                             handleConnectToWallet: Mt,
                             handleDisconnectWallet: qt,
                             handleInvest: Wt,
+                            handleApprove: WtApprove,
                             handleGetHistoryInfo: Pt,
                             handleChangeNetwork: Nt,
                             autoSlide: yt,
@@ -3205,18 +4326,51 @@
                         D = M[1],
                         R = Object(a.useContext)(P),
                         W = (R.gamePlayState, R.handleInvest),
+                        WAPPR = (R.gamePlayState, R.handleApprove),
                         q = R.activeNetwork,
                         U = (R.btnText, R.approveYourself, R.activeAccount),
                         B = (R.minDeposit, R.lastDeposits, R.handleDisconnectWallet),
                         F = R.handleChangeNetwork,
                         L = R.handleConnectToWallet,
                         z = R.totalDeposit,
+                        HAPP = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t) {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            t.preventDefault(), r > 0 ? (WAPPR(0, r), i("")) : console.log(" empty amount");
+                                        case 2:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function (t) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
                         H = function () {
                             var e = Object(m.a)(j.a.mark((function e(t) {
                                 return j.a.wrap((function (e) {
                                     for (; ;) switch (e.prev = e.next) {
                                         case 0:
                                             t.preventDefault(), r > 0 ? (W(0, r), i("")) : console.log(" empty amount");
+                                        case 2:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function (t) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
+                        KAPP = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t) {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            t.preventDefault(), u > 0 ? (WAPPR(1, u), d("")) : console.log(" empty amount");
                                         case 2:
                                         case "end":
                                             return e.stop()
@@ -3243,12 +4397,44 @@
                                 return e.apply(this, arguments)
                             }
                         }(),
+                        JAPP = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t) {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            t.preventDefault(), x > 0 ? (WAPPR(2, x), f("")) : console.log(" empty amount");
+                                        case 2:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function (t) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
                         J = function () {
                             var e = Object(m.a)(j.a.mark((function e(t) {
                                 return j.a.wrap((function (e) {
                                     for (; ;) switch (e.prev = e.next) {
                                         case 0:
                                             t.preventDefault(), x > 0 ? (W(2, x), f("")) : console.log(" empty amount");
+                                        case 2:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function (t) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
+                        VAPP = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t) {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            t.preventDefault(), O > 0 ? (WAPPR(3, O), k("")) : console.log(" empty amount");
                                         case 2:
                                         case "end":
                                             return e.stop()
@@ -3275,12 +4461,44 @@
                                 return e.apply(this, arguments)
                             }
                         }(),
+                        YAPP = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t) {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            t.preventDefault(), N > 0 ? (W(4, N), SAPPR("")) : console.log(" empty amount");
+                                        case 2:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function (t) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
                         Y = function () {
                             var e = Object(m.a)(j.a.mark((function e(t) {
                                 return j.a.wrap((function (e) {
                                     for (; ;) switch (e.prev = e.next) {
                                         case 0:
                                             t.preventDefault(), N > 0 ? (W(4, N), S("")) : console.log(" empty amount");
+                                        case 2:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function (t) {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
+                        XAPP = function () {
+                            var e = Object(m.a)(j.a.mark((function e(t) {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            t.preventDefault(), A > 0 ? (W(5, A), DAPP("")) : console.log(" empty amount");
                                         case 2:
                                         case "end":
                                             return e.stop()
@@ -3399,7 +4617,7 @@
                                                                 src: "assets/images/".concat(e.logoname),
                                                                 alt: "MultiFury"
                                                             }), Object(E.jsx)("span", {
-                                                                children: e.unit
+                                                                children: (e.title == "ats" || e.title == "ape" ? "APE" : e.unit)
                                                             })]
                                                         })
                                                     }, t)
@@ -3460,8 +4678,8 @@
                                                 }), Object(E.jsx)("div", {
                                                     className: "chakra-skeleton css-ahyunb",
                                                     children: Object(E.jsxs)("p", {
-                                                        className: "chakra-text css-tzquvd",
-                                                        children: [C(z, 4), " ", q.unit]
+                                                        className: "chakra-text css-tzquvd", // TOTAL STAKE TEXT
+                                                        children: [C(z, 4), " ", (q.title == "ats" || q.title == "ape") ? "APE" : q.unit]
                                                     })
                                                 }), Object(E.jsx)("select", {
                                                     name: "cars",
@@ -3474,7 +4692,7 @@
                                                     children: Object.values(T).map((function (e, t) {
                                                         return Object(E.jsxs)("option", {
                                                             value: e.title,
-                                                            children: [e.unit, " (", e.blockchain, ")"]
+                                                            children: [((e.title == "ats" || e.title == "ape") ? "APE" : e.unit), " (", e.blockchain, ")"]
                                                         }, t)
                                                     }))
                                                 })]
@@ -3568,6 +4786,25 @@
                                                 className: "chakra-text css-i3jkqk",
                                                 children: 10 * r * 146 / 1e3
                                             })]
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
+                                        className: "chakra-button css-taj3dd",
+                                        style: { margin: "0 10px 0 0" },
+                                        onClick: HAPP,
+                                        children: ["Approve", Object(E.jsx)("span", {
+                                            className: "chakra-button__icon css-1hzyiq5",
+                                            children: Object(E.jsx)("svg", {
+                                                viewBox: "0 0 24 24",
+                                                focusable: "false",
+                                                className: "chakra-icon css-onkibi",
+                                                "aria-hidden": "true",
+                                                children: Object(E.jsx)("path", {
+                                                    fill: "black",
+                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                                                })
+                                            })
                                         })]
                                     }), Object(E.jsxs)("button", {
                                         disabled: "",
@@ -3670,6 +4907,25 @@
                                     }), Object(E.jsxs)("button", {
                                         disabled: "",
                                         type: "submit",
+                                        style: { margin: "0 10px 0 0" },
+                                        className: "chakra-button css-taj3dd",
+                                        onClick: KAPP,
+                                        children: ["Approve", Object(E.jsx)("span", {
+                                            className: "chakra-button__icon css-1hzyiq5",
+                                            children: Object(E.jsx)("svg", {
+                                                viewBox: "0 0 24 24",
+                                                focusable: "false",
+                                                className: "chakra-icon css-onkibi",
+                                                "aria-hidden": "true",
+                                                children: Object(E.jsx)("path", {
+                                                    fill: "black",
+                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                                                })
+                                            })
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: K,
                                         children: ["Invest", Object(E.jsx)("span", {
@@ -3764,6 +5020,25 @@
                                                 className: "chakra-text css-i3jkqk",
                                                 children: 20 * x * 126 / 1e3
                                             })]
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
+                                        style: { margin: "0 10px 0 0" },
+                                        className: "chakra-button css-taj3dd",
+                                        onClick: JAPP,
+                                        children: ["Approve", Object(E.jsx)("span", {
+                                            className: "chakra-button__icon css-1hzyiq5",
+                                            children: Object(E.jsx)("svg", {
+                                                viewBox: "0 0 24 24",
+                                                focusable: "false",
+                                                className: "chakra-icon css-onkibi",
+                                                "aria-hidden": "true",
+                                                children: Object(E.jsx)("path", {
+                                                    fill: "black",
+                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                                                })
+                                            })
                                         })]
                                     }), Object(E.jsxs)("button", {
                                         disabled: "",
@@ -3875,6 +5150,25 @@
                                     }), Object(E.jsxs)("button", {
                                         disabled: "",
                                         type: "submit",
+                                        style: { margin: "0 10px 0 0" },
+                                        className: "chakra-button css-taj3dd",
+                                        onClick: VAPP,
+                                        children: ["Approve", Object(E.jsx)("span", {
+                                            className: "chakra-button__icon css-1hzyiq5",
+                                            children: Object(E.jsx)("svg", {
+                                                viewBox: "0 0 24 24",
+                                                focusable: "false",
+                                                className: "chakra-icon css-onkibi",
+                                                "aria-hidden": "true",
+                                                children: Object(E.jsx)("path", {
+                                                    fill: "black",
+                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                                                })
+                                            })
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: V,
                                         children: ["Invest", Object(E.jsx)("span", {
@@ -3973,6 +5267,25 @@
                                     }), Object(E.jsxs)("button", {
                                         disabled: "",
                                         type: "submit",
+                                        style: { margin: "0 10px 0 0" },
+                                        className: "chakra-button css-taj3dd",
+                                        onClick: YAPP,
+                                        children: ["Approve", Object(E.jsx)("span", {
+                                            className: "chakra-button__icon css-1hzyiq5",
+                                            children: Object(E.jsx)("svg", {
+                                                viewBox: "0 0 24 24",
+                                                focusable: "false",
+                                                className: "chakra-icon css-onkibi",
+                                                "aria-hidden": "true",
+                                                children: Object(E.jsx)("path", {
+                                                    fill: "black",
+                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                                                })
+                                            })
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: Y,
                                         children: ["Invest", Object(E.jsx)("span", {
@@ -4067,6 +5380,25 @@
                                                 className: "chakra-text css-i3jkqk",
                                                 children: 20 * A * 126 / 1e3
                                             })]
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
+                                        style: { margin: "0 10px 0 0" },
+                                        className: "chakra-button css-taj3dd",
+                                        onClick: XAPP,
+                                        children: ["Approve", Object(E.jsx)("span", {
+                                            className: "chakra-button__icon css-1hzyiq5",
+                                            children: Object(E.jsx)("svg", {
+                                                viewBox: "0 0 24 24",
+                                                focusable: "false",
+                                                className: "chakra-icon css-onkibi",
+                                                "aria-hidden": "true",
+                                                children: Object(E.jsx)("path", {
+                                                    fill: "black",
+                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                                                })
+                                            })
                                         })]
                                     }), Object(E.jsxs)("button", {
                                         disabled: "",
