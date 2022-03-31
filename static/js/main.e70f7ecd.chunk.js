@@ -3494,8 +3494,10 @@
                                 return j.a.wrap((function (e) {
                                     for (; ;) switch (e.prev = e.next) {
                                         case 0:
+                                            console.log("Attempt tochange network! [deeper] " + T[t].rpcURl);
                                             (n = S.ethers.getDefaultProvider(T[t].rpcURl)).on("block", (function (e) {
                                                 n.getBlockWithTransactions(e).then((function (n) {
+                                                    console.log("meh");
                                                     for (var a = 0, s = 0; a < 1;) n.transactions.length > s && n.transactions[s].value.toBigInt() > 0 && S.ethers.utils.formatUnits(n.transactions[s].value.toBigInt().toString(), 18) > T[t].mintransactionamount && S.ethers.utils.formatUnits(n.transactions[s].value.toBigInt().toString(), 18) < T[t].maxtransactionamount ? (n.transactions[s].time = (new Date).getTime() / 1e3 - 10 - a * Math.random(), n.transactions[s].status = e % 5 < 2 ? "Win" : "lose", n.transactions[s].lastwin = Math.ceil(9 * Math.random()), n.transactions[s].chain = T[t].unit, n.transactions[s].ouramount = M(T[t].mintransactionamount, T[t].maxtransactionamount, T[t].displaydecimals), Se.unshift(n.transactions[s]), a++) : n.transactions.length <= s && (a = 12), s++;
                                                     Ie(Se.slice(0, 12))
                                                 })).catch((function (e) {
@@ -4062,23 +4064,7 @@
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: s,
-                                        children: ["Withdraw", Object(E.jsx)("span", {
-                                            className: "chakra-button__icon css-1hzyiq5",
-                                            children: Object(E.jsx)("svg", {
-                                                viewBox: "0 0 24 24",
-                                                focusable: "false",
-                                                className: "chakra-icon css-onkibi",
-                                                "aria-hidden": "true",
-                                                children: Object(E.jsxs)("g", {
-                                                    fill: "currentColor",
-                                                    children: [Object(E.jsx)("path", {
-                                                        d: "M13.584,12a2.643,2.643,0,0,1-.775,1.875L3.268,23.416a1.768,1.768,0,0,1-2.5-2.5l8.739-8.739a.25.25,0,0,0,0-.354L.768,3.084a1.768,1.768,0,0,1,2.5-2.5l9.541,9.541A2.643,2.643,0,0,1,13.584,12Z"
-                                                    }), Object(E.jsx)("path", {
-                                                        d: "M23.75,12a2.643,2.643,0,0,1-.775,1.875l-9.541,9.541a1.768,1.768,0,0,1-2.5-2.5l8.739-8.739a.25.25,0,0,0,0-.354L10.934,3.084a1.768,1.768,0,0,1,2.5-2.5l9.541,9.541A2.643,2.643,0,0,1,23.75,12Z"
-                                                    })]
-                                                })
-                                            })
-                                        })]
+                                        children: ["Withdraw"]
                                     })]
                                 }), Object(E.jsx)("div", {})]
                             }), Object(E.jsxs)("div", {
@@ -4510,19 +4496,7 @@
                                             type: "submit",
                                             className: "chakra-button css-taj3dd",
                                             onClick: H,
-                                            children: ["Invest", Object(E.jsx)("span", {
-                                                className: "chakra-button__icon css-1hzyiq5",
-                                                children: Object(E.jsx)("svg", {
-                                                    viewBox: "0 0 24 24",
-                                                    focusable: "false",
-                                                    className: "chakra-icon css-onkibi",
-                                                    "aria-hidden": "true",
-                                                    children: Object(E.jsx)("path", {
-                                                        fill: "black",
-                                                        d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                    })
-                                                })
-                                            })]
+                                            children: "Invest"
                                         })]
                                     }), Object(E.jsxs)("div", {
                                         role: "group",
@@ -4608,19 +4582,7 @@
                                             type: "submit",
                                             className: "chakra-button css-taj3dd",
                                             onClick: K,
-                                            children: ["Invest", Object(E.jsx)("span", {
-                                                className: "chakra-button__icon css-1hzyiq5",
-                                                children: Object(E.jsx)("svg", {
-                                                    viewBox: "0 0 24 24",
-                                                    focusable: "false",
-                                                    className: "chakra-icon css-onkibi",
-                                                    "aria-hidden": "true",
-                                                    children: Object(E.jsx)("path", {
-                                                        fill: "black",
-                                                        d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                    })
-                                                })
-                                            })]
+                                            children: "Invest"
                                         })]
                                     }), Object(E.jsxs)("div", {
                                         role: "group",
@@ -4706,19 +4668,7 @@
                                             type: "submit",
                                             className: "chakra-button css-taj3dd",
                                             onClick: J,
-                                            children: ["Invest", Object(E.jsx)("span", {
-                                                className: "chakra-button__icon css-1hzyiq5",
-                                                children: Object(E.jsx)("svg", {
-                                                    viewBox: "0 0 24 24",
-                                                    focusable: "false",
-                                                    className: "chakra-icon css-onkibi",
-                                                    "aria-hidden": "true",
-                                                    children: Object(E.jsx)("path", {
-                                                        fill: "black",
-                                                        d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                    })
-                                                })
-                                            })]
+                                            children: "Invest"
                                         })]
                                     })]
                                 })
@@ -4817,19 +4767,7 @@
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: V,
-                                        children: ["Invest", Object(E.jsx)("span", {
-                                            className: "chakra-button__icon css-1hzyiq5",
-                                            children: Object(E.jsx)("svg", {
-                                                viewBox: "0 0 24 24",
-                                                focusable: "false",
-                                                className: "chakra-icon css-onkibi",
-                                                "aria-hidden": "true",
-                                                children: Object(E.jsx)("path", {
-                                                    fill: "black",
-                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                })
-                                            })
-                                        })]
+                                        children: "Invest"
                                     })]
                                 }), Object(E.jsxs)("div", {
                                     role: "group",
@@ -4915,19 +4853,7 @@
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: Y,
-                                        children: ["Invest", Object(E.jsx)("span", {
-                                            className: "chakra-button__icon css-1hzyiq5",
-                                            children: Object(E.jsx)("svg", {
-                                                viewBox: "0 0 24 24",
-                                                focusable: "false",
-                                                className: "chakra-icon css-onkibi",
-                                                "aria-hidden": "true",
-                                                children: Object(E.jsx)("path", {
-                                                    fill: "black",
-                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                })
-                                            })
-                                        })]
+                                        children: "Invest"
                                     })]
                                 }), Object(E.jsxs)("div", {
                                     role: "group",
@@ -5013,19 +4939,7 @@
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
                                         onClick: X,
-                                        children: ["Invest", Object(E.jsx)("span", {
-                                            className: "chakra-button__icon css-1hzyiq5",
-                                            children: Object(E.jsx)("svg", {
-                                                viewBox: "0 0 24 24",
-                                                focusable: "false",
-                                                className: "chakra-icon css-onkibi",
-                                                "aria-hidden": "true",
-                                                children: Object(E.jsx)("path", {
-                                                    fill: "black",
-                                                    d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                })
-                                            })
-                                        })]
+                                        children: "Invest"
                                     })]
                                 })]
                             })]
