@@ -1042,7 +1042,9 @@
                         "type": "event"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "FORCE_WITHDRAW_PENALTY",
                         "outputs": [
                             {
@@ -1055,7 +1057,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "INVEST_MAX_AMOUNT",
                         "outputs": [
                             {
@@ -1068,7 +1072,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "INVEST_MIN_AMOUNT",
                         "outputs": [
                             {
@@ -1081,7 +1087,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "LAUNCHED",
                         "outputs": [
                             {
@@ -1094,7 +1102,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "PERCENTS_DIVIDER",
                         "outputs": [
                             {
@@ -1107,7 +1117,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "PERCENT_STEP",
                         "outputs": [
                             {
@@ -1120,7 +1132,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "PROJECT_FEE",
                         "outputs": [
                             {
@@ -1152,7 +1166,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "TIME_STEP",
                         "outputs": [
                             {
@@ -1165,7 +1181,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "WITHDRAW_FEE",
                         "outputs": [
                             {
@@ -1186,12 +1204,16 @@
                             }
                         ],
                         "name": "forceWithdraw",
-                        "outputs": [],
+                        "outputs": [
+
+                        ],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "getContractBalance",
                         "outputs": [
                             {
@@ -1204,7 +1226,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "getContractInfo",
                         "outputs": [
                             {
@@ -1217,6 +1241,25 @@
                                 "name": "",
                                 "type": "uint256"
                             },
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "userAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getNextTimestampForWithdraw",
+                        "outputs": [
                             {
                                 "internalType": "uint256",
                                 "name": "",
@@ -1589,25 +1632,6 @@
                                 "type": "address"
                             }
                         ],
-                        "name": "getUserTotalWithdrawn",
-                        "outputs": [
-                            {
-                                "internalType": "uint256",
-                                "name": "amount",
-                                "type": "uint256"
-                            }
-                        ],
-                        "stateMutability": "view",
-                        "type": "function"
-                    },
-                    {
-                        "inputs": [
-                            {
-                                "internalType": "address",
-                                "name": "userAddress",
-                                "type": "address"
-                            }
-                        ],
                         "name": "getUserWithdrawn",
                         "outputs": [
                             {
@@ -1638,19 +1662,27 @@
                             }
                         ],
                         "name": "invest",
-                        "outputs": [],
+                        "outputs": [
+
+                        ],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "launch",
-                        "outputs": [],
+                        "outputs": [
+
+                        ],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "startUNIX",
                         "outputs": [
                             {
@@ -1663,7 +1695,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "token",
                         "outputs": [
                             {
@@ -1676,7 +1710,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "totalRefBonus",
                         "outputs": [
                             {
@@ -1689,7 +1725,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "totalStaked",
                         "outputs": [
                             {
@@ -1702,7 +1740,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "totalUsers",
                         "outputs": [
                             {
@@ -1715,9 +1755,13 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [],
+                        "inputs": [
+
+                        ],
                         "name": "withdraw",
-                        "outputs": [],
+                        "outputs": [
+
+                        ],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     }
@@ -1862,7 +1906,7 @@
                         }]
                     },
                     ats: {
-                        contract: "0x43eD4B731D0DC361Cd6A4e3cBBdb7d9Be837b9d0",
+                        contract: "0xfb387aEDfC081712000E688B3b79a4334328f2F7",
                         TokenContract: "0x57854f181a2e26df9CD47c56032923f51D88d2bF", // ApeCoin Ropsten Test Address
                         chainId: "3",
                         projectId: "46",
@@ -4074,15 +4118,19 @@
                                         })]
                                     }), Object(E.jsxs)("button", {
                                         type: "submit",
+                                        style: {
+                                            pointerEvents: (parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 == 0
+                                                || parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 > Date.now()) ? "none" : "auto"
+                                        },
                                         className: "chakra-button css-taj3dd",
                                         onClick: s,
+                                        //onClick: function () { console.log(parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 > Date.now()) },
                                         children: ["Withdraw"]
                                     }), Object(E.jsxs)("button", {
                                         type: "submit",
-                                        style: { marginTop: "20px" },
+                                        style: { marginTop: "20px", pointerEvents: (parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 == 0) ? "none" : "auto" },
                                         href: "http://auditwhale.io/images/audit-reports/pdf/multiearns.pdf",
                                         className: "chakra-button css-taj3dd",
-                                        //onClick: sForce,
                                         onClick: function () { window.location.href = "https://ropsten.etherscan.io/" },
                                         children: ["Force Withdraw"]
                                     })]
