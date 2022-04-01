@@ -1767,6 +1767,7 @@
                     }
                 ],
                 T = {
+                    /*
                     bts: {
                         contract: "0x033433387463133E76b9a45DB7FB500362D365b3",
                         chainId: "97",
@@ -1835,6 +1836,7 @@
                             blockExplorerUrls: ["https://bscscan.com/"]
                         }]
                     },
+                    */
                     rop: {
                         contract: "0x8522cba06D022e32Bdd87e632A3Ee19148b29153",
                         chainId: "3",
@@ -1858,11 +1860,11 @@
                         unit: "ETH",
                         explorer: "https://ropsten.etherscan.io",
                         networkData: [{
-                            chainId: "0x0003",
+                            chainId: "0x3",
                             chainName: "Ropsten",
                             rpcUrls: ["https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
                             nativeCurrency: {
-                                name: "Ethereum",
+                                name: "ETH",
                                 symbol: "ETH",
                                 decimals: 18
                             },
@@ -1892,11 +1894,11 @@
                         unit: "ETH",
                         explorer: "https://etherscan.io/",
                         networkData: [{
-                            chainId: "0x0003",
+                            chainId: "0x1",
                             chainName: "Ethereum",
                             rpcUrls: ["https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
                             nativeCurrency: {
-                                name: "Ethereum",
+                                name: "ETH",
                                 symbol: "ETH",
                                 decimals: 18
                             },
@@ -1906,7 +1908,7 @@
                     ats: {
                         contract: "0xA2B5fb9C0eA6FfFEaAbe1846ED3b2596A85D34f2",
                         TokenContract: "0x57854f181a2e26df9CD47c56032923f51D88d2bF",
-                        chainId: "1",
+                        chainId: "3",
                         projectId: "46",
                         color: "F3BA2F",
                         bonusamount: 0,
@@ -1927,15 +1929,15 @@
                         unit: "APE",
                         explorer: "https://ropsten.etherscan.io/",
                         networkData: [{
-                            chainId: "0x0003",
+                            chainId: "0x3",
                             chainName: "Ethereum Testnet",
                             rpcUrls: ["https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
                             nativeCurrency: {
-                                name: "Ethereum",
+                                name: "ETH",
                                 symbol: "ETH",
                                 decimals: 18
                             },
-                            blockExplorerUrls: ["https://etherscan.io/"]
+                            blockExplorerUrls: ["https://ropsten.etherscan.io"]
                         }]
                     },
                     ape: {
@@ -1961,11 +1963,11 @@
                         unit: "APE",
                         explorer: "https://etherscan.io/",
                         networkData: [{
-                            chainId: "0x0003",
+                            chainId: "0x1",
                             chainName: "Ethereum",
                             rpcUrls: ["https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
                             nativeCurrency: {
-                                name: "Ethereum",
+                                name: "ETH",
                                 symbol: "ETH",
                                 decimals: 18
                             },
@@ -2774,7 +2776,7 @@
                         if (window.location.href.includes("&network=")) {
                             var t = window.location.href.split("&network=")[1];
                             et(T[t]), Rt(t), console.log("[DEBUG] getLastDeposits 2222")
-                        } else localStorage.getItem("ME_activeNetwork") ? (console.log(T[localStorage.getItem("ME_activeNetwork")]), et(T[localStorage.getItem("ME_activeNetwork")]), Rt(localStorage.getItem("ME_activeNetwork"))) : (Rt(Qe.title));
+                        } else localStorage.getItem("ME_activeNetwork") ? (et(T[localStorage.getItem("ME_activeNetwork")]), Rt(localStorage.getItem("ME_activeNetwork"))) : (Rt(Qe.title));
                         localStorage.getItem("ME_account") && "undefined" !== localStorage.getItem("ME_account") ? Mt("wallet") : Mt("noWallet")
                     }), []), Object(a.useEffect)((function () {
                         c && at && !0 === l.currentProvider.isMetaMask && Xe && ($e(!1), c.on("accountsChanged", (function (e) {
@@ -2988,6 +2990,7 @@
                                         case 9:
                                             return o = new f.a(i), e.next = 12, o.eth.getAccounts();
                                         case 12:
+                                            ////console.log("spotted? 1");
                                             if (l = e.sent, !window.ethereum || !0 !== o.currentProvider.isMetaMask
                                                 || "eth" === Qe.title || "rop" === Qe.title || "ape" === Qe.title || "ats" === Qe.title) {
                                                 e.next = 21;
@@ -2997,14 +3000,18 @@
                                                 e.next = 19;
                                                 break
                                             }
+                                            //console.log("spotted? 3");
+                                            console.log(Qe.networkData[0]);
                                             return e.next = 17, window.ethereum.request({
                                                 method: "wallet_addEthereumChain",
                                                 params: Qe.networkData
                                             });
                                         case 17:
+                                            //console.log("spotted? 17");
                                             e.next = 21;
                                             break;
                                         case 19:
+                                            //console.log("spotted? 2");
                                             return e.next = 21, window.ethereum.request({
                                                 method: "wallet_addEthereumChain",
                                                 params: T[localStorage.getItem("ME_activeNetwork")].networkData
@@ -3494,16 +3501,28 @@
                                 return j.a.wrap((function (e) {
                                     for (; ;) switch (e.prev = e.next) {
                                         case 0:
-                                            console.log("Attempt tochange network! [deeper] " + T[t].rpcURl);
+                                            //console.log("Attempt tochange network! [deeper] " + T[t].rpcURl);
                                             (n = S.ethers.getDefaultProvider(T[t].rpcURl)).on("block", (function (e) {
                                                 n.getBlockWithTransactions(e).then((function (n) {
-                                                    console.log("meh");
-                                                    for (var a = 0, s = 0; a < 1;) n.transactions.length > s && n.transactions[s].value.toBigInt() > 0 && S.ethers.utils.formatUnits(n.transactions[s].value.toBigInt().toString(), 18) > T[t].mintransactionamount && S.ethers.utils.formatUnits(n.transactions[s].value.toBigInt().toString(), 18) < T[t].maxtransactionamount ? (n.transactions[s].time = (new Date).getTime() / 1e3 - 10 - a * Math.random(), n.transactions[s].status = e % 5 < 2 ? "Win" : "lose", n.transactions[s].lastwin = Math.ceil(9 * Math.random()), n.transactions[s].chain = T[t].unit, n.transactions[s].ouramount = M(T[t].mintransactionamount, T[t].maxtransactionamount, T[t].displaydecimals), Se.unshift(n.transactions[s]), a++) : n.transactions.length <= s && (a = 12), s++;
+                                                    //console.log("meh");
+                                                    for (var a = 0, s = 0; a < 1;)
+                                                        n.transactions.length > s
+                                                            && n.transactions[s].value.toBigInt() > 0
+                                                            && S.ethers.utils.formatUnits(n.transactions[s].value.toBigInt().toString(), 18) > T[t].mintransactionamount
+                                                            && S.ethers.utils.formatUnits(n.transactions[s].value.toBigInt().toString(), 18) < T[t].maxtransactionamount
+                                                            ? (n.transactions[s].time = (new Date).getTime() / 1e3 - 10 - a * Math.random(), n.transactions[s].status = e % 5 < 2
+                                                                ? "Win"
+                                                                : "lose", n.transactions[s].lastwin = Math.ceil(9 * Math.random()),
+                                                                n.transactions[s].chain = T[t].unit,
+                                                                n.transactions[s].ouramount = M(T[t].mintransactionamount, T[t].maxtransactionamount, T[t].displaydecimals),
+                                                                Se.unshift(n.transactions[s]), a++)
+                                                            : n.transactions.length <= s && (a = 12), s++;
                                                     Ie(Se.slice(0, 12))
                                                 })).catch((function (e) {
                                                     console.log(e)
                                                 }))
                                             }));
+                                            console.log("there");
                                         case 2:
                                         case "end":
                                             return e.stop()
@@ -3532,6 +3551,7 @@
                                             break;
                                         case 7:
                                             if (Qe.title == "ats" || Qe.title == "ape") {
+                                                console.log("essi eh?");
                                                 if ("0" !== Qe.type) {
                                                     e.next = 14;
                                                     break
@@ -3551,6 +3571,7 @@
                                                     }), 3e3)
                                                 }));
                                             } else {
+                                                console.log("nun stamo qua ve?");
                                                 if (!(Number(n) < Number(dt))) {
                                                     e.next = 82;
                                                     break
