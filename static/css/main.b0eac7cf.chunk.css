@@ -411,6 +411,11 @@ body {
     justify-content: space-between
 }
 
+.css-gg4vpm_2 {
+    display: flex;
+    justify-content: space-between
+}
+
 .css-1u2ov44 {
     color: #fff;
     font-size: 16px;
@@ -647,6 +652,7 @@ body {
 .css-taj3dd:focus {
     color: var(--clr-bg);
     text-shadow: none;
+    font-weight: 700px;
 }
 
 .css-taj3dd:hover::before,
@@ -657,6 +663,7 @@ body {
 .css-taj3dd:hover::after,
 .css-taj3dd:focus::after {
     opacity: 1;
+    font-weight: 700px;
 }
 
 

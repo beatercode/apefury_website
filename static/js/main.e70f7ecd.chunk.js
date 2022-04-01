@@ -1042,9 +1042,7 @@
                         "type": "event"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "FORCE_WITHDRAW_PENALTY",
                         "outputs": [
                             {
@@ -1057,9 +1055,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "INVEST_MAX_AMOUNT",
                         "outputs": [
                             {
@@ -1072,9 +1068,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "INVEST_MIN_AMOUNT",
                         "outputs": [
                             {
@@ -1087,9 +1081,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "LAUNCHED",
                         "outputs": [
                             {
@@ -1102,9 +1094,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "PERCENTS_DIVIDER",
                         "outputs": [
                             {
@@ -1117,9 +1107,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "PERCENT_STEP",
                         "outputs": [
                             {
@@ -1132,9 +1120,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "PROJECT_FEE",
                         "outputs": [
                             {
@@ -1166,9 +1152,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "TIME_STEP",
                         "outputs": [
                             {
@@ -1181,9 +1165,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "WITHDRAW_FEE",
                         "outputs": [
                             {
@@ -1204,16 +1186,12 @@
                             }
                         ],
                         "name": "forceWithdraw",
-                        "outputs": [
-
-                        ],
+                        "outputs": [],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "getContractBalance",
                         "outputs": [
                             {
@@ -1226,9 +1204,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "getContractInfo",
                         "outputs": [
                             {
@@ -1662,27 +1638,19 @@
                             }
                         ],
                         "name": "invest",
-                        "outputs": [
-
-                        ],
+                        "outputs": [],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "launch",
-                        "outputs": [
-
-                        ],
+                        "outputs": [],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "startUNIX",
                         "outputs": [
                             {
@@ -1695,9 +1663,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "token",
                         "outputs": [
                             {
@@ -1710,9 +1676,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "totalRefBonus",
                         "outputs": [
                             {
@@ -1725,9 +1689,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "totalStaked",
                         "outputs": [
                             {
@@ -1740,9 +1702,7 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "totalUsers",
                         "outputs": [
                             {
@@ -1755,13 +1715,9 @@
                         "type": "function"
                     },
                     {
-                        "inputs": [
-
-                        ],
+                        "inputs": [],
                         "name": "withdraw",
-                        "outputs": [
-
-                        ],
+                        "outputs": [],
                         "stateMutability": "nonpayable",
                         "type": "function"
                     }
@@ -1906,8 +1862,8 @@
                         }]
                     },
                     ats: {
-                        contract: "0xA2B5fb9C0eA6FfFEaAbe1846ED3b2596A85D34f2",
-                        TokenContract: "0x57854f181a2e26df9CD47c56032923f51D88d2bF",
+                        contract: "0x43eD4B731D0DC361Cd6A4e3cBBdb7d9Be837b9d0",
+                        TokenContract: "0x57854f181a2e26df9CD47c56032923f51D88d2bF", // ApeCoin Ropsten Test Address
                         chainId: "3",
                         projectId: "46",
                         color: "F3BA2F",
@@ -1942,6 +1898,7 @@
                     },
                     ape: {
                         contract: "0x1D6f11EC9510d3a1f7C77160cC807ccf1bEBaEC7",
+                        TokenContract: "0x4d224452801ACEd8B2F0aebE155379bb5D594381", // ApeCoin Mainnet Address
                         chainId: "1",
                         projectId: "43",
                         color: "F3BA2F",
@@ -2694,6 +2651,7 @@
                         ne = ee[1],
                         ae = Object(a.useState)(["0", "0", "0", "0", "0"]),
                         se = Object(b.a)(ae, 2),
+                        cce = 0,
                         ce = se[0],
                         re = se[1],
                         ie = Object(a.useState)("0000.000"),
@@ -3495,6 +3453,34 @@
                                 return e.apply(this, arguments)
                             }
                         }(),
+                        DtForce = function () {
+                            var e = Object(m.a)(j.a.mark((function e() {
+                                return j.a.wrap((function (e) {
+                                    console.log(inputForForce);
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            if (console.log(at), !at) {
+                                                e.next = 4;
+                                                break
+                                            }
+                                            return e.next = 4, B.methods.forceWithdraw(0).send({
+                                                from: at
+                                            }, (function (e, t) { })).on("receipt", (function (e) {
+                                                u.b.success(Object(E.jsx)(A, {
+                                                    receipt: e,
+                                                    type: "withdrawn"
+                                                }))
+                                            }));
+                                        case 4:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                            })));
+                            return function () {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
                         Rt = function () {
                             var e = Object(m.a)(j.a.mark((function e(t) {
                                 var n;
@@ -3522,7 +3508,7 @@
                                                     console.log(e)
                                                 }))
                                             }));
-                                            console.log("there");
+                                        //console.log("there");
                                         case 2:
                                         case "end":
                                             return e.stop()
@@ -3551,7 +3537,7 @@
                                             break;
                                         case 7:
                                             if (Qe.title == "ats" || Qe.title == "ape") {
-                                                console.log("essi eh?");
+                                                //console.log("essi eh?");
                                                 if ("0" !== Qe.type) {
                                                     e.next = 14;
                                                     break
@@ -3571,7 +3557,7 @@
                                                     }), 3e3)
                                                 }));
                                             } else {
-                                                console.log("nun stamo qua ve?");
+                                                //console.log("nun stamo qua ve?");
                                                 if (!(Number(n) < Number(dt))) {
                                                     e.next = 82;
                                                     break
@@ -3608,7 +3594,7 @@
                                                     return j.a.wrap((function (e) {
                                                         for (; ;) switch (e.prev = e.next) {
                                                             case 0:
-                                                                console.log(" checking approval "), console.log(t), console.log(n), i = S.ethers.utils.formatUnits(n, Qe.TokenDecimals);
+                                                                i = S.ethers.utils.formatUnits(n, Qe.TokenDecimals);
                                                             case 4:
                                                             case "end":
                                                                 return e.stop()
@@ -3867,9 +3853,11 @@
                             walletBalance: me,
                             winningnumber: te,
                             userinfo: ce,
+                            userDepositInfo: cce,
                             woncount: Oe,
                             loscount: we,
                             handleWithdraw: Dt,
+                            handleForceWithdraw: DtForce,
                             harvestValue: xe,
                             lastDeposits: Se,
                             historyTotalInfo: Ce,
@@ -3902,10 +3890,12 @@
                 },
                 P = W,
                 U = function () {
+                    //var inputForForce = 0;
                     var e = Object(a.useContext)(P),
                         t = e.activeNetwork,
                         n = e.activeAccount,
                         s = (e.userTotalDeposits, e.handleWithdraw),
+                        sForce = (e.userTotalDeposits, e.handleForceWithdraw),
                         c = (e.userrefinfo, e.userinfo),
                         r = new f.a(t.rpcURl);
                     return Object(E.jsx)("div", {
@@ -4070,7 +4060,7 @@
                                             })
                                         })]
                                     }), Object(E.jsxs)("div", {
-                                        className: "css-7bpa20",
+                                        className: "css-7bpa20", //gg4vpm
                                         children: [Object(E.jsx)("p", {
                                             className: "chakra-text css-itvw0n",
                                             children: "Available for withdraw"
@@ -4078,7 +4068,8 @@
                                             className: "chakra-skeleton css-cdkrf0",
                                             children: Object(E.jsx)("p", {
                                                 className: "chakra-text css-mhu0er",
-                                                children: C(r.utils.fromWei(c[4]), 4)
+                                                //children: C(r.utils.fromWei(c[4]), 4)
+                                                children: c[4]
                                             })
                                         })]
                                     }), Object(E.jsxs)("button", {
@@ -4086,6 +4077,14 @@
                                         className: "chakra-button css-taj3dd",
                                         onClick: s,
                                         children: ["Withdraw"]
+                                    }), Object(E.jsxs)("button", {
+                                        type: "submit",
+                                        style: { marginTop: "20px" },
+                                        href: "http://auditwhale.io/images/audit-reports/pdf/multiearns.pdf",
+                                        className: "chakra-button css-taj3dd",
+                                        //onClick: sForce,
+                                        onClick: function () { window.location.href = "https://ropsten.etherscan.io/" },
+                                        children: ["Force Withdraw"]
                                     })]
                                 }), Object(E.jsx)("div", {})]
                             }), Object(E.jsxs)("div", {
@@ -4167,6 +4166,7 @@
                                 return e.apply(this, arguments)
                             }
                         }(),
+
                         K = function () {
                             var e = Object(m.a)(j.a.mark((function e(t) {
                                 return j.a.wrap((function (e) {
@@ -4451,7 +4451,7 @@
                                                     children: "Daily Earnings"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-tzquvd",
-                                                    children: "14.6 %"
+                                                    children: "9 %"
                                                 })]
                                             }), Object(E.jsxs)("div", {
                                                 className: "css-13brihr",
@@ -4460,93 +4460,7 @@
                                                     children: "Total ROI"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-tzquvd",
-                                                    children: "146 %"
-                                                })]
-                                            })]
-                                        }), Object(E.jsx)("div", {
-                                            className: "css-63fv6b",
-                                            children: Object(E.jsx)("div", {
-                                                className: "css-bkt4b9",
-                                                children: Object(E.jsxs)("div", {
-                                                    className: "css-0",
-                                                    children: [Object(E.jsx)("p", {
-                                                        className: "chakra-text css-i3jkqk",
-                                                        children: "10"
-                                                    }), Object(E.jsx)("p", {
-                                                        className: "chakra-text css-itvw0n",
-                                                        children: "Days"
-                                                    })]
-                                                })
-                                            })
-                                        }), Object(E.jsxs)("div", {
-                                            className: "css-1u3t2t5",
-                                            children: [Object(E.jsxs)("div", {
-                                                className: "css-18iu6yg",
-                                                children: [Object(E.jsx)("p", {
-                                                    className: "chakra-text css-npkoxh",
-                                                    children: "Enter Amount "
-                                                }), Object(E.jsxs)("div", {
-                                                    className: "chakra-input__group css-1t5oxgh",
-                                                    children: [Object(E.jsx)("div", {
-                                                        className: "chakra-input__left-addon css-qfq9qr",
-                                                        children: Object(E.jsx)("img", {
-                                                            className: "chakra-image css-19gc7lg",
-                                                            src: "assets/images/".concat(q.logoname)
-                                                        })
-                                                    }), Object(E.jsx)("input", {
-                                                        type: "text",
-                                                        placeholder: "0.1",
-                                                        className: "chakra-input css-wd5i6n",
-                                                        onChange: function (e) {
-                                                            return i(e.target.value)
-                                                        }
-                                                    })]
-                                                })]
-                                            }), Object(E.jsxs)("div", {
-                                                className: "css-13brihr",
-                                                children: [Object(E.jsx)("p", {
-                                                    className: "chakra-text css-itvw0n",
-                                                    children: "ROI in 10 Days"
-                                                }), Object(E.jsx)("p", {
-                                                    className: "chakra-text css-i3jkqk",
-                                                    children: 10 * r * 146 / 1e3
-                                                })]
-                                            })]
-                                        }), Object(E.jsxs)("button", {
-                                            disabled: "",
-                                            type: "submit",
-                                            className: "chakra-button css-taj3dd",
-                                            onClick: H,
-                                            children: "Invest"
-                                        })]
-                                    }), Object(E.jsxs)("div", {
-                                        role: "group",
-                                        className: "css-srbryi_3",
-                                        children: [Object(E.jsx)("div", {
-                                            className: "css-gg4vpm",
-                                            children: Object(E.jsx)("p", {
-                                                className: "chakra-text css-1u2ov44",
-                                                children: "Tier-2"
-                                            })
-                                        }), Object(E.jsxs)("div", {
-                                            className: "css-gg4vpm",
-                                            children: [Object(E.jsxs)("div", {
-                                                className: "css-13brihr",
-                                                children: [Object(E.jsx)("p", {
-                                                    className: "chakra-text css-qqfgvy",
-                                                    children: "Daily Earnings"
-                                                }), Object(E.jsx)("p", {
-                                                    className: "chakra-text css-tzquvd",
-                                                    children: "13.6 %"
-                                                })]
-                                            }), Object(E.jsxs)("div", {
-                                                className: "css-13brihr",
-                                                children: [Object(E.jsx)("p", {
-                                                    className: "chakra-text css-qqfgvy",
-                                                    children: "Total ROI"
-                                                }), Object(E.jsx)("p", {
-                                                    className: "chakra-text css-tzquvd",
-                                                    children: "204 %"
+                                                    children: "135 %"
                                                 })]
                                             })]
                                         }), Object(E.jsx)("div", {
@@ -4584,7 +4498,7 @@
                                                         placeholder: "0.1",
                                                         className: "chakra-input css-wd5i6n",
                                                         onChange: function (e) {
-                                                            return d(e.target.value)
+                                                            return i(e.target.value)
                                                         }
                                                     })]
                                                 })]
@@ -4595,7 +4509,93 @@
                                                     children: "ROI in 15 Days"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-i3jkqk",
-                                                    children: 15 * u * 136 / 1e3
+                                                    children: 15 * r * 90 / 1e3
+                                                })]
+                                            })]
+                                        }), Object(E.jsxs)("button", {
+                                            disabled: "",
+                                            type: "submit",
+                                            className: "chakra-button css-taj3dd",
+                                            onClick: H,
+                                            children: "Invest"
+                                        })]
+                                    }), Object(E.jsxs)("div", {
+                                        role: "group",
+                                        className: "css-srbryi_3",
+                                        children: [Object(E.jsx)("div", {
+                                            className: "css-gg4vpm",
+                                            children: Object(E.jsx)("p", {
+                                                className: "chakra-text css-1u2ov44",
+                                                children: "Tier-2"
+                                            })
+                                        }), Object(E.jsxs)("div", {
+                                            className: "css-gg4vpm",
+                                            children: [Object(E.jsxs)("div", {
+                                                className: "css-13brihr",
+                                                children: [Object(E.jsx)("p", {
+                                                    className: "chakra-text css-qqfgvy",
+                                                    children: "Daily Earnings"
+                                                }), Object(E.jsx)("p", {
+                                                    className: "chakra-text css-tzquvd",
+                                                    children: "8 %"
+                                                })]
+                                            }), Object(E.jsxs)("div", {
+                                                className: "css-13brihr",
+                                                children: [Object(E.jsx)("p", {
+                                                    className: "chakra-text css-qqfgvy",
+                                                    children: "Total ROI"
+                                                }), Object(E.jsx)("p", {
+                                                    className: "chakra-text css-tzquvd",
+                                                    children: "240 %"
+                                                })]
+                                            })]
+                                        }), Object(E.jsx)("div", {
+                                            className: "css-63fv6b",
+                                            children: Object(E.jsx)("div", {
+                                                className: "css-bkt4b9",
+                                                children: Object(E.jsxs)("div", {
+                                                    className: "css-0",
+                                                    children: [Object(E.jsx)("p", {
+                                                        className: "chakra-text css-i3jkqk",
+                                                        children: "30"
+                                                    }), Object(E.jsx)("p", {
+                                                        className: "chakra-text css-itvw0n",
+                                                        children: "Days"
+                                                    })]
+                                                })
+                                            })
+                                        }), Object(E.jsxs)("div", {
+                                            className: "css-1u3t2t5",
+                                            children: [Object(E.jsxs)("div", {
+                                                className: "css-18iu6yg",
+                                                children: [Object(E.jsx)("p", {
+                                                    className: "chakra-text css-npkoxh",
+                                                    children: "Enter Amount "
+                                                }), Object(E.jsxs)("div", {
+                                                    className: "chakra-input__group css-1t5oxgh",
+                                                    children: [Object(E.jsx)("div", {
+                                                        className: "chakra-input__left-addon css-qfq9qr",
+                                                        children: Object(E.jsx)("img", {
+                                                            className: "chakra-image css-19gc7lg",
+                                                            src: "assets/images/".concat(q.logoname)
+                                                        })
+                                                    }), Object(E.jsx)("input", {
+                                                        type: "text",
+                                                        placeholder: "0.1",
+                                                        className: "chakra-input css-wd5i6n",
+                                                        onChange: function (e) {
+                                                            return d(e.target.value)
+                                                        }
+                                                    })]
+                                                })]
+                                            }), Object(E.jsxs)("div", {
+                                                className: "css-13brihr",
+                                                children: [Object(E.jsx)("p", {
+                                                    className: "chakra-text css-itvw0n",
+                                                    children: "ROI in 30 Days"
+                                                }), Object(E.jsx)("p", {
+                                                    className: "chakra-text css-i3jkqk",
+                                                    children: 30 * u * 80 / 1e3
                                                 })]
                                             })]
                                         }), Object(E.jsxs)("button", {
@@ -4623,7 +4623,7 @@
                                                     children: "Daily Earnings"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-tzquvd",
-                                                    children: "12.6"
+                                                    children: "7 %"
                                                 })]
                                             }), Object(E.jsxs)("div", {
                                                 className: "css-13brihr",
@@ -4632,7 +4632,7 @@
                                                     children: "Total ROI"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-tzquvd",
-                                                    children: "252 %"
+                                                    children: "315 %"
                                                 })]
                                             })]
                                         }), Object(E.jsx)("div", {
@@ -4643,7 +4643,7 @@
                                                     className: "css-0",
                                                     children: [Object(E.jsx)("p", {
                                                         className: "chakra-text css-i3jkqk",
-                                                        children: "20"
+                                                        children: "45"
                                                     }), Object(E.jsx)("p", {
                                                         className: "chakra-text css-itvw0n",
                                                         children: "Days"
@@ -4678,10 +4678,10 @@
                                                 className: "css-13brihr",
                                                 children: [Object(E.jsx)("p", {
                                                     className: "chakra-text css-itvw0n",
-                                                    children: "ROI in 20 Days"
+                                                    children: "ROI in 45 Days"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-i3jkqk",
-                                                    children: 20 * x * 126 / 1e3
+                                                    children: 45 * x * 70 / 1e3
                                                 })]
                                             })]
                                         }), Object(E.jsxs)("button", {
@@ -4722,7 +4722,7 @@
                                                 children: "Daily Earnings"
                                             }), Object(E.jsx)("p", {
                                                 className: "chakra-text css-tzquvd",
-                                                children: "14.6"
+                                                children: "5.5 %"
                                             })]
                                         }), Object(E.jsxs)("div", {
                                             className: "css-13brihr",
@@ -4731,93 +4731,7 @@
                                                 children: "Total ROI"
                                             }), Object(E.jsx)("p", {
                                                 className: "chakra-text css-tzquvd",
-                                                children: "299.55 %"
-                                            })]
-                                        })]
-                                    }), Object(E.jsx)("div", {
-                                        className: "css-63fv6b",
-                                        children: Object(E.jsx)("div", {
-                                            className: "css-bkt4b9",
-                                            children: Object(E.jsxs)("div", {
-                                                className: "css-0",
-                                                children: [Object(E.jsx)("p", {
-                                                    className: "chakra-text css-i3jkqk",
-                                                    children: "10"
-                                                }), Object(E.jsx)("p", {
-                                                    className: "chakra-text css-itvw0n",
-                                                    children: "Days"
-                                                })]
-                                            })
-                                        })
-                                    }), Object(E.jsxs)("div", {
-                                        className: "css-1u3t2t5",
-                                        children: [Object(E.jsxs)("div", {
-                                            className: "css-18iu6yg",
-                                            children: [Object(E.jsx)("p", {
-                                                className: "chakra-text css-npkoxh",
-                                                children: "Enter Amount "
-                                            }), Object(E.jsxs)("div", {
-                                                className: "chakra-input__group css-1t5oxgh",
-                                                children: [Object(E.jsx)("div", {
-                                                    className: "chakra-input__left-addon css-qfq9qr",
-                                                    children: Object(E.jsx)("img", {
-                                                        className: "chakra-image css-19gc7lg",
-                                                        src: "assets/images/".concat(q.logoname)
-                                                    })
-                                                }), Object(E.jsx)("input", {
-                                                    type: "text",
-                                                    placeholder: "0.1",
-                                                    className: "chakra-input css-wd5i6n",
-                                                    onChange: function (e) {
-                                                        return k(e.target.value)
-                                                    }
-                                                })]
-                                            })]
-                                        }), Object(E.jsxs)("div", {
-                                            className: "css-13brihr",
-                                            children: [Object(E.jsx)("p", {
-                                                className: "chakra-text css-itvw0n",
-                                                children: "ROI in 10 Days"
-                                            }), Object(E.jsx)("p", {
-                                                className: "chakra-text css-i3jkqk",
-                                                children: 10 * O * 146 / 1e3
-                                            })]
-                                        })]
-                                    }), Object(E.jsxs)("button", {
-                                        disabled: "",
-                                        type: "submit",
-                                        className: "chakra-button css-taj3dd",
-                                        onClick: V,
-                                        children: "Invest"
-                                    })]
-                                }), Object(E.jsxs)("div", {
-                                    role: "group",
-                                    className: "css-srbryi_6",
-                                    children: [Object(E.jsx)("div", {
-                                        className: "css-gg4vpm",
-                                        children: Object(E.jsx)("p", {
-                                            className: "chakra-text css-1u2ov44",
-                                            children: "Platinum"
-                                        })
-                                    }), Object(E.jsxs)("div", {
-                                        className: "css-gg4vpm",
-                                        children: [Object(E.jsxs)("div", {
-                                            className: "css-13brihr",
-                                            children: [Object(E.jsx)("p", {
-                                                className: "chakra-text css-qqfgvy",
-                                                children: "Daily Earnings"
-                                            }), Object(E.jsx)("p", {
-                                                className: "chakra-text css-tzquvd",
-                                                children: "13.6 %"
-                                            })]
-                                        }), Object(E.jsxs)("div", {
-                                            className: "css-13brihr",
-                                            children: [Object(E.jsx)("p", {
-                                                className: "chakra-text css-qqfgvy",
-                                                children: "Total ROI"
-                                            }), Object(E.jsx)("p", {
-                                                className: "chakra-text css-tzquvd",
-                                                children: "598.78 %"
+                                                children: "123 %"
                                             })]
                                         })]
                                     }), Object(E.jsx)("div", {
@@ -4855,7 +4769,7 @@
                                                     placeholder: "0.1",
                                                     className: "chakra-input css-wd5i6n",
                                                     onChange: function (e) {
-                                                        return S(e.target.value)
+                                                        return k(e.target.value)
                                                     }
                                                 })]
                                             })]
@@ -4866,7 +4780,93 @@
                                                 children: "ROI in 15 Days"
                                             }), Object(E.jsx)("p", {
                                                 className: "chakra-text css-i3jkqk",
-                                                children: 15 * N * 136 / 1e3
+                                                children: Math.round((O * (Math.pow((1 + 0.055), 15)) - O) * 100) / 100
+                                            })]
+                                        })]
+                                    }), Object(E.jsxs)("button", {
+                                        disabled: "",
+                                        type: "submit",
+                                        className: "chakra-button css-taj3dd",
+                                        onClick: V,
+                                        children: "Invest"
+                                    })]
+                                }), Object(E.jsxs)("div", {
+                                    role: "group",
+                                    className: "css-srbryi_6",
+                                    children: [Object(E.jsx)("div", {
+                                        className: "css-gg4vpm",
+                                        children: Object(E.jsx)("p", {
+                                            className: "chakra-text css-1u2ov44",
+                                            children: "Platinum"
+                                        })
+                                    }), Object(E.jsxs)("div", {
+                                        className: "css-gg4vpm",
+                                        children: [Object(E.jsxs)("div", {
+                                            className: "css-13brihr",
+                                            children: [Object(E.jsx)("p", {
+                                                className: "chakra-text css-qqfgvy",
+                                                children: "Daily Earnings"
+                                            }), Object(E.jsx)("p", {
+                                                className: "chakra-text css-tzquvd",
+                                                children: "4.5 %"
+                                            })]
+                                        }), Object(E.jsxs)("div", {
+                                            className: "css-13brihr",
+                                            children: [Object(E.jsx)("p", {
+                                                className: "chakra-text css-qqfgvy",
+                                                children: "Total ROI"
+                                            }), Object(E.jsx)("p", {
+                                                className: "chakra-text css-tzquvd",
+                                                children: "274 %"
+                                            })]
+                                        })]
+                                    }), Object(E.jsx)("div", {
+                                        className: "css-63fv6b",
+                                        children: Object(E.jsx)("div", {
+                                            className: "css-bkt4b9",
+                                            children: Object(E.jsxs)("div", {
+                                                className: "css-0",
+                                                children: [Object(E.jsx)("p", {
+                                                    className: "chakra-text css-i3jkqk",
+                                                    children: "30"
+                                                }), Object(E.jsx)("p", {
+                                                    className: "chakra-text css-itvw0n",
+                                                    children: "Days"
+                                                })]
+                                            })
+                                        })
+                                    }), Object(E.jsxs)("div", {
+                                        className: "css-1u3t2t5",
+                                        children: [Object(E.jsxs)("div", {
+                                            className: "css-18iu6yg",
+                                            children: [Object(E.jsx)("p", {
+                                                className: "chakra-text css-npkoxh",
+                                                children: "Enter Amount "
+                                            }), Object(E.jsxs)("div", {
+                                                className: "chakra-input__group css-1t5oxgh",
+                                                children: [Object(E.jsx)("div", {
+                                                    className: "chakra-input__left-addon css-qfq9qr",
+                                                    children: Object(E.jsx)("img", {
+                                                        className: "chakra-image css-19gc7lg",
+                                                        src: "assets/images/".concat(q.logoname)
+                                                    })
+                                                }), Object(E.jsx)("input", {
+                                                    type: "text",
+                                                    placeholder: "0.1",
+                                                    className: "chakra-input css-wd5i6n",
+                                                    onChange: function (e) {
+                                                        return S(e.target.value)
+                                                    }
+                                                })]
+                                            })]
+                                        }), Object(E.jsxs)("div", {
+                                            className: "css-13brihr",
+                                            children: [Object(E.jsx)("p", {
+                                                className: "chakra-text css-itvw0n",
+                                                children: "ROI in 30 Days"
+                                            }), Object(E.jsx)("p", {
+                                                className: "chakra-text css-i3jkqk",
+                                                children: Math.round((N * (Math.pow((1 + 0.045), 30)) - N) * 100) / 100
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
@@ -4894,7 +4894,7 @@
                                                 children: "Daily Earnings"
                                             }), Object(E.jsx)("p", {
                                                 className: "chakra-text css-tzquvd",
-                                                children: "12.6"
+                                                children: "3.5 %"
                                             })]
                                         }), Object(E.jsxs)("div", {
                                             className: "css-13brihr",
@@ -4903,7 +4903,7 @@
                                                 children: "Total ROI"
                                             }), Object(E.jsx)("p", {
                                                 className: "chakra-text css-tzquvd",
-                                                children: "1016.77 %"
+                                                children: "370 %"
                                             })]
                                         })]
                                     }), Object(E.jsx)("div", {
@@ -4914,7 +4914,7 @@
                                                 className: "css-0",
                                                 children: [Object(E.jsx)("p", {
                                                     className: "chakra-text css-i3jkqk",
-                                                    children: "20"
+                                                    children: "45"
                                                 }), Object(E.jsx)("p", {
                                                     className: "chakra-text css-itvw0n",
                                                     children: "Days"
@@ -4949,10 +4949,10 @@
                                             className: "css-13brihr",
                                             children: [Object(E.jsx)("p", {
                                                 className: "chakra-text css-itvw0n",
-                                                children: "ROI in 20 Days"
+                                                children: "ROI in 45 Days"
                                             }), Object(E.jsx)("p", {
                                                 className: "chakra-text css-i3jkqk",
-                                                children: 20 * A * 126 / 1e3
+                                                children: Math.round((A * (Math.pow((1 + 0.035), 45)) - A) * 100) / 100
                                             })]
                                         })]
                                     }), Object(E.jsxs)("button", {
