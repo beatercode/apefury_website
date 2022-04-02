@@ -23,6 +23,7 @@
             console.log(n(21));
             "use strict";
             n.r(t);
+            var launched = false;
             var a = n(7),
                 s = n(145),
                 c = n.n(s),
@@ -2162,6 +2163,18 @@
                     var n = e.toString().split(".");
                     return n[0] = n[0].replace(/(\d)(?=(\d{3})+$)/g, "$1,"), n.join(".")
                 },
+                secondsToDhms = function (seconds) {
+                    seconds = Number(seconds) / 1000;
+                    var d = Math.floor(seconds / (3600 * 24));
+                    var h = Math.floor(seconds % (3600 * 24) / 3600);
+                    var m = Math.floor(seconds % 3600 / 60);
+                    var s = Math.floor(seconds % 60);
+
+                    var dDisplay = d > 0 ? d + (d == 1 ? " d " : " d ") : "";
+                    var hDisplay = h > 0 ? h + (h == 1 ? " h " : " h ") : "";
+                    var mDisplay = m > 0 ? m + (m == 1 ? " min " : " min ") : "";
+                    return dDisplay + hDisplay + mDisplay;
+                },
                 E = n(2),
                 A = function (e) {
                     var t = e.receipt,
@@ -3470,6 +3483,33 @@
                                 return e.apply(this, arguments)
                             }
                         }(),
+                        gDateMs = function () {
+                            var e = Object(m.a)(j.a.mark((function e() {
+                                return j.a.wrap((function (e) {
+                                    for (; ;) switch (e.prev = e.next) {
+                                        case 0:
+                                            return e.next = 4, B.methods.getUserAmountOfDeposits(at).call((err, result) => {
+                                                if (err) {
+                                                    console.log("err");
+                                                } else {
+                                                    console.log("done");
+                                                    var nDep = result;
+                                                    //return nDep;                                                }
+                                                }
+                                            });
+                                        case 4:
+                                        case "end":
+                                            return e.stop()
+                                    }
+                                }), e)
+                                return function () {
+                                    return e.apply(this, arguments)
+                                }
+                            })));
+                            return function () {
+                                return e.apply(this, arguments)
+                            }
+                        }(),
                         Dt = function () {
                             var e = Object(m.a)(j.a.mark((function e() {
                                 return j.a.wrap((function (e) {
@@ -3901,6 +3941,7 @@
                             woncount: Oe,
                             loscount: we,
                             handleWithdraw: Dt,
+                            getDateByMs: gDateMs,
                             handleForceWithdraw: DtForce,
                             harvestValue: xe,
                             lastDeposits: Se,
@@ -3939,6 +3980,7 @@
                         t = e.activeNetwork,
                         n = e.activeAccount,
                         s = (e.userTotalDeposits, e.handleWithdraw),
+                        gDate = (e.userTotalDeposits, e.getDateByMs),
                         sForce = (e.userTotalDeposits, e.handleForceWithdraw),
                         c = (e.userrefinfo, e.userinfo),
                         r = new f.a(t.rpcURl);
@@ -4116,19 +4158,37 @@
                                                 children: c[4]
                                             })
                                         })]
+                                    }), Object(E.jsxs)("div", {
+                                        className: "not", //gg4vpm
+                                        style: { marginBottom: "15px !important", marginTop: "15px !important" },
+                                        children: [Object(E.jsx)("p", {
+                                            className: "chakra-text css-itvw0n",
+                                            children: "Next withdraw in:"
+                                        }), Object(E.jsx)("div", {
+                                            className: "chakra-skeleton css-cdkrf0",
+                                            children: Object(E.jsx)("p", {
+                                                className: "chakra-text css-mhu0er",
+                                                //children: C(r.utils.fromWei(c[4]), 4)
+                                                //children: [secondsToDhms((parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000) - Date.now())]
+                                                children: [secondsToDhms(1650150132 * 1000 - Date.now())]
+                                            })
+                                        })],
                                     }), Object(E.jsxs)("button", {
                                         type: "submit",
                                         style: {
                                             pointerEvents: (parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 == 0
-                                                || parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 > Date.now()) ? "none" : "auto"
+                                                || parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 > Date.now()
+                                                || launched == false) ? "none" : "auto"
                                         },
                                         className: "chakra-button css-taj3dd",
                                         onClick: s,
-                                        //onClick: function () { console.log(parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 > Date.now()) },
                                         children: ["Withdraw"]
                                     }), Object(E.jsxs)("button", {
                                         type: "submit",
-                                        style: { marginTop: "20px", pointerEvents: (parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 == 0) ? "none" : "auto" },
+                                        style: {
+                                            marginTop: "20px",
+                                            pointerEvents: (parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000 == 0 || launched == false) ? "none" : "auto"
+                                        },
                                         href: "http://auditwhale.io/images/audit-reports/pdf/multiearns.pdf",
                                         className: "chakra-button css-taj3dd",
                                         onClick: function () { window.location.href = "https://ropsten.etherscan.io/" },
@@ -4352,124 +4412,194 @@
                                 })]
                             }), Object(E.jsx)("div", {
                                 className: "home-stats",
-                                children: Object(E.jsxs)("div", {
-                                    className: "row",
-                                    children: [Object(E.jsxs)("div", {
-                                        className: "col-md-7 mt-5",
-                                        children: [Object(E.jsx)("h2", {
-                                            className: "chakra-heading css-1xqpn67",
-                                            children: "Stake Your Currency & Earn up to 14.6% Daily"
-                                        }), Object(E.jsx)("p", {
-                                            style: {
-                                                fontSize: "20px",
-                                                color: "white",
-                                                margin: "20px 0 28px 0"
-                                            },
-                                            children: "Daily 12.6% - 14.6% return on your investment up to 252%"
-                                        }), Object(E.jsx)("div", {
-                                            className: "",
-                                            style: {
-                                                margintop: "24px"
-                                            },
-                                            children: Object(E.jsx)("div", {
-                                                className: "d-flex flex-wrap welcome-networks",
-                                                style: {
-                                                    gap: "20px"
-                                                },
-                                                children: Object.values(T).map((function (e, t) {
-                                                    return Object(E.jsx)("div", {
-                                                        children: Object(E.jsxs)("button", {
-                                                            onClick: function () {
-                                                                F(e.title)
-                                                            },
-                                                            className: "home-network-btn ".concat(q.title === e.title ? q.title + " op " : ""),
-                                                            children: [Object(E.jsx)("img", {
-                                                                src: "assets/images/".concat(e.logoname),
-                                                                alt: "MultiFury"
-                                                            }), Object(E.jsx)("span", {
-                                                                children: (e.title == "ats" || e.title == "ape" ? "APE" : e.unit)
-                                                            })]
-                                                        })
-                                                    }, t)
-                                                }))
-                                            })
-                                        })]
-                                    }), Object(E.jsxs)("div", {
-                                        className: "col-md-5 mt-5",
-                                        children: [Object(E.jsxs)("div", {
-                                            className: "chakra-text css-1y5136",
-                                            style: {
-                                                display: "flex"
-                                            },
-                                            children: [Object(E.jsx)("div", {
-                                                className: "",
-                                                children: q.explorerlink ? q.explorerlink.map((function (e, t) {
-                                                    return Object(E.jsx)("a", {
-                                                        href: e,
-                                                        className: "links",
-                                                        target: "_blank",
-                                                        rel: "noreferrer",
-                                                        children: "Contract"
-                                                    }, t)
-                                                })) : null
-                                            }), Object(E.jsx)("div", {
-                                                className: "",
-                                                children: Object(E.jsx)("a", {
-                                                    href: "http://auditwhale.io/images/audit-reports/pdf/multiearns.pdf",
-                                                    className: "links",
-                                                    target: "_blank",
-                                                    children: "Audit"
-                                                })
-                                            }), Object(E.jsx)("div", {
-                                                className: "",
-                                                children: Object(E.jsx)("a", {
-                                                    target: "_blank",
-                                                    href: "https://medium.com/@boycottsamuel7/multiearns-com-earn-up-to-14-5-daily-by-staking-bnb-matic-fantom-cronos-avax-tt-tokens-73c3a98f1529",
-                                                    className: "links",
-                                                    children: "Medium"
-                                                })
-                                            }), Object(E.jsx)("div", {
-                                                className: "",
-                                                children: Object(E.jsx)("a", {
-                                                    href: "https://t.me/multiearns",
-                                                    className: "links",
-                                                    target: "_blank",
-                                                    children: "Telegram"
-                                                })
-                                            })]
-                                        }), Object(E.jsx)("div", {
-                                            className: "css-1o6ckf3",
-                                            children: Object(E.jsxs)("div", {
-                                                role: "group",
-                                                className: "css-srbryi_1",
-                                                children: [Object(E.jsx)("p", {
-                                                    className: "chakra-text css-qqfgvy",
-                                                    children: "Total Staked Balance"
-                                                }), Object(E.jsx)("div", {
-                                                    className: "chakra-skeleton css-ahyunb",
-                                                    children: Object(E.jsxs)("p", {
-                                                        className: "chakra-text css-tzquvd", // TOTAL STAKE TEXT
-                                                        children: [C(z, 4), " ", (q.title == "ats" || q.title == "ape") ? "APE" : q.unit]
+                                children: [
+                                    Object(E.jsxs)("div", {
+                                        className: "row",
+                                        children: [
+                                            Object(E.jsxs)("div", {
+                                                style: { margin: "auto" },
+                                                className: "until",
+                                                id: "myCountdown",
+                                                children: [
+                                                    Object(E.jsx)("div", {
+                                                        className: "until__component",
+                                                        children: [
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__numeric until__numeric--days",
+                                                                children: "00"
+                                                            }),
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__unit",
+                                                                children: "Days"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    Object(E.jsx)("div", {
+                                                        className: "until__component",
+                                                        children: [
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__numeric until__numeric--hours",
+                                                                children: "00"
+                                                            }),
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__unit",
+                                                                children: "Hours"
+                                                            })
+                                                        ]
+                                                    }), Object(E.jsx)("div", {
+                                                        className: "until__component",
+                                                        children: [
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__numeric until__numeric--minutes",
+                                                                children: "00"
+                                                            }),
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__unit",
+                                                                children: "Minutes"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    Object(E.jsx)("div", {
+                                                        className: "until__component",
+                                                        children: [
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__numeric until__numeric--seconds",
+                                                                children: "00"
+                                                            }),
+                                                            Object(E.jsx)("div", {
+                                                                className: "until__unit",
+                                                                children: "Seconds"
+                                                            })
+                                                        ]
+                                                    }),
+                                                    Object(E.jsx)("div", {
+                                                        className: "until__event",
+                                                        children: [
+                                                            "Countdown to Launch!"
+                                                        ]
                                                     })
-                                                }), Object(E.jsx)("select", {
-                                                    name: "cars",
-                                                    id: "cars",
-                                                    className: "input-deposit-amount-stake",
-                                                    value: q.title,
-                                                    onChange: function (e) {
-                                                        console.log(e.target.selectedOptions[0].value), console.log(e.target.value), F(e.target.value)
+                                                ]
+                                            })
+                                        ]
+                                    }),
+                                    Object(E.jsxs)("div", {
+                                        className: "row",
+                                        children: [Object(E.jsxs)("div", {
+                                            className: "col-md-7 mt-5",
+                                            children: [Object(E.jsx)("h2", {
+                                                className: "chakra-heading css-1xqpn67",
+                                                children: "Stake Your Currency & Earn up to 14.6% Daily"
+                                            }), Object(E.jsx)("p", {
+                                                style: {
+                                                    fontSize: "20px",
+                                                    color: "white",
+                                                    margin: "20px 0 28px 0"
+                                                },
+                                                children: "Daily 12.6% - 14.6% return on your investment up to 252%"
+                                            }), Object(E.jsx)("div", {
+                                                className: "",
+                                                style: {
+                                                    margintop: "24px"
+                                                },
+                                                children: Object(E.jsx)("div", {
+                                                    className: "d-flex flex-wrap welcome-networks",
+                                                    style: {
+                                                        gap: "20px"
                                                     },
                                                     children: Object.values(T).map((function (e, t) {
-                                                        return Object(E.jsxs)("option", {
-                                                            value: e.title,
-                                                            children: [((e.title == "ats" || e.title == "ape") ? "APE" : e.unit), " (", e.blockchain, ")"]
+                                                        return Object(E.jsx)("div", {
+                                                            children: Object(E.jsxs)("button", {
+                                                                onClick: function () {
+                                                                    F(e.title)
+                                                                },
+                                                                className: "home-network-btn ".concat(q.title === e.title ? q.title + " op " : ""),
+                                                                children: [Object(E.jsx)("img", {
+                                                                    src: "assets/images/".concat(e.logoname),
+                                                                    alt: "MultiFury"
+                                                                }), Object(E.jsx)("span", {
+                                                                    children: (e.title == "ats" || e.title == "ape" ? "APE" : e.unit)
+                                                                })]
+                                                            })
                                                         }, t)
                                                     }))
+                                                })
+                                            })]
+                                        }), Object(E.jsxs)("div", {
+                                            className: "col-md-5 mt-5",
+                                            children: [Object(E.jsxs)("div", {
+                                                className: "chakra-text css-1y5136",
+                                                style: {
+                                                    display: "flex"
+                                                },
+                                                children: [Object(E.jsx)("div", {
+                                                    className: "",
+                                                    children: q.explorerlink ? q.explorerlink.map((function (e, t) {
+                                                        return Object(E.jsx)("a", {
+                                                            href: e,
+                                                            className: "links",
+                                                            target: "_blank",
+                                                            rel: "noreferrer",
+                                                            children: "Contract"
+                                                        }, t)
+                                                    })) : null
+                                                }), Object(E.jsx)("div", {
+                                                    className: "",
+                                                    children: Object(E.jsx)("a", {
+                                                        href: "http://auditwhale.io/images/audit-reports/pdf/multiearns.pdf",
+                                                        className: "links",
+                                                        target: "_blank",
+                                                        children: "Audit"
+                                                    })
+                                                }), Object(E.jsx)("div", {
+                                                    className: "",
+                                                    children: Object(E.jsx)("a", {
+                                                        target: "_blank",
+                                                        href: "https://medium.com/@boycottsamuel7/multiearns-com-earn-up-to-14-5-daily-by-staking-bnb-matic-fantom-cronos-avax-tt-tokens-73c3a98f1529",
+                                                        className: "links",
+                                                        children: "Medium"
+                                                    })
+                                                }), Object(E.jsx)("div", {
+                                                    className: "",
+                                                    children: Object(E.jsx)("a", {
+                                                        href: "https://t.me/multiearns",
+                                                        className: "links",
+                                                        target: "_blank",
+                                                        children: "Telegram"
+                                                    })
                                                 })]
-                                            })
+                                            }), Object(E.jsx)("div", {
+                                                className: "css-1o6ckf3",
+                                                children: Object(E.jsxs)("div", {
+                                                    role: "group",
+                                                    className: "css-srbryi_1",
+                                                    children: [Object(E.jsx)("p", {
+                                                        className: "chakra-text css-qqfgvy",
+                                                        children: "Total Staked Balance"
+                                                    }), Object(E.jsx)("div", {
+                                                        className: "chakra-skeleton css-ahyunb",
+                                                        children: Object(E.jsxs)("p", {
+                                                            className: "chakra-text css-tzquvd", // TOTAL STAKE TEXT
+                                                            children: [C(z, 4), " ", (q.title == "ats" || q.title == "ape") ? "APE" : q.unit]
+                                                        })
+                                                    }), Object(E.jsx)("select", {
+                                                        name: "cars",
+                                                        id: "cars",
+                                                        className: "input-deposit-amount-stake",
+                                                        value: q.title,
+                                                        onChange: function (e) {
+                                                            console.log(e.target.selectedOptions[0].value), console.log(e.target.value), F(e.target.value)
+                                                        },
+                                                        children: Object.values(T).map((function (e, t) {
+                                                            return Object(E.jsxs)("option", {
+                                                                value: e.title,
+                                                                children: [((e.title == "ats" || e.title == "ape") ? "APE" : e.unit), " (", e.blockchain, ")"]
+                                                            }, t)
+                                                        }))
+                                                    })]
+                                                })
+                                            })]
                                         })]
                                     })]
-                                })
                             }), (q.blockchain != "Ethereum" && q.blockchain != "Ropsten") ?
                                 [Object(E.jsx)("h2", {
                                     style: {
@@ -4564,6 +4694,7 @@
                                             disabled: "",
                                             type: "submit",
                                             className: "chakra-button css-taj3dd",
+                                            style: { pointerEvents: launched == true ? "auto" : "none" },
                                             onClick: H,
                                             children: "Invest"
                                         })]
@@ -4650,6 +4781,7 @@
                                             disabled: "",
                                             type: "submit",
                                             className: "chakra-button css-taj3dd",
+                                            style: { pointerEvents: launched == true ? "auto" : "none" },
                                             onClick: K,
                                             children: "Invest"
                                         })]
@@ -4736,6 +4868,7 @@
                                             disabled: "",
                                             type: "submit",
                                             className: "chakra-button css-taj3dd",
+                                            style: { pointerEvents: launched == true ? "auto" : "none" },
                                             onClick: J,
                                             children: "Invest"
                                         })]
@@ -4835,6 +4968,7 @@
                                         disabled: "",
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
+                                        style: { pointerEvents: launched == true ? "auto" : "none" },
                                         onClick: V,
                                         children: "Invest"
                                     })]
@@ -4921,6 +5055,7 @@
                                         disabled: "",
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
+                                        style: { pointerEvents: launched == true ? "auto" : "none" },
                                         onClick: Y,
                                         children: "Invest"
                                     })]
@@ -5007,6 +5142,7 @@
                                         disabled: "",
                                         type: "submit",
                                         className: "chakra-button css-taj3dd",
+                                        style: { pointerEvents: launched == true ? "auto" : "none" },
                                         onClick: X,
                                         children: "Invest"
                                     })]
