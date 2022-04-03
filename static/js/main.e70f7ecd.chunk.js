@@ -2786,11 +2786,11 @@
                     Object(a.useEffect)((function () {
                         if (localStorage.getItem("ME_siteInfo") && (ue(JSON.parse(localStorage.getItem("ME_siteInfo"))[0]), localStorage.getItem("ME_usdPrice") && Y(JSON.parse(localStorage.getItem("ME_usdPrice")))), localStorage.getItem("ME_mindeposit") && q(JSON.parse(localStorage.getItem("ME_mindeposit"))), window.location.href.includes("ref=")) {
                             var e = window.location.href.split("ref=")[1];
-                            localStorage.setItem("ME_baseRef", e), console.log(e), console.log("[DEBUG] getLastDeposits 2222")
+                            localStorage.setItem("ME_baseRef", e), console.log(e)
                         }
                         if (window.location.href.includes("&network=")) {
                             var t = window.location.href.split("&network=")[1];
-                            et(T[t]), Rt(t), console.log("[DEBUG] getLastDeposits 2222")
+                            et(T[t]), Rt(t)
                         } else localStorage.getItem("ME_activeNetwork") ? (et(T[localStorage.getItem("ME_activeNetwork")]), Rt(localStorage.getItem("ME_activeNetwork"))) : (Rt(Qe.title));
                         localStorage.getItem("ME_account") && "undefined" !== localStorage.getItem("ME_account") ? Mt("wallet") : Mt("noWallet")
                     }), []), Object(a.useEffect)((function () {
@@ -3005,28 +3005,38 @@
                                         case 9:
                                             return o = new f.a(i), e.next = 12, o.eth.getAccounts();
                                         case 12:
-                                            ////console.log("spotted? 1");
+                                            if (l = e.sent, !window.ethereum || !0 !== o.currentProvider.isMetaMask) {
+                                                e.next = 21;
+                                                break;
+                                            }
+                                            /*
                                             if (l = e.sent, !window.ethereum || !0 !== o.currentProvider.isMetaMask
                                                 || "eth" === Qe.title || "rop" === Qe.title || "ape" === Qe.title || "ats" === Qe.title) {
                                                 e.next = 21;
                                                 break
                                             }
+                                            */
                                             if (localStorage.getItem("ME_activeNetwork") && localStorage.getItem("ME_activeNetwork") !== Qe.title) {
                                                 e.next = 19;
                                                 break
                                             }
-                                            //console.log("spotted? 3");
-                                            console.log(Qe.networkData[0]);
-                                            return e.next = 17, window.ethereum.request({
-                                                method: "wallet_addEthereumChain",
-                                                params: Qe.networkData
-                                            });
+                                            var _etherChainNames = ["Ethereum", "Ropsten", "Ape"];
+                                            var _chainName = Qe.networkData[0].chainName;
+                                            if (_etherChainNames.some(el => _chainName.includes(el))) {
+                                                return e.next = 17, window.ethereum.request({
+                                                    method: "wallet_switchEthereumChain",
+                                                    params: [{ chainId: Qe.networkData[0].chainId }]
+                                                });
+                                            } else {
+                                                return e.next = 17, window.ethereum.request({
+                                                    method: "wallet_addEthereumChain",
+                                                    params: Qe.networkData
+                                                });
+                                            }
                                         case 17:
-                                            //console.log("spotted? 17");
                                             e.next = 21;
                                             break;
                                         case 19:
-                                            //console.log("spotted? 2");
                                             return e.next = 21, window.ethereum.request({
                                                 method: "wallet_addEthereumChain",
                                                 params: T[localStorage.getItem("ME_activeNetwork")].networkData
@@ -3252,7 +3262,6 @@
                                                             }
                                                             return e.next = 22, a.eth.getAccounts();
                                                         case 22:
-                                                            console.log("serio?");
                                                             (r = e.sent)[0] ? new a.eth.Contract(R, Qe.TokenContract).methods.balanceOf(r[0]).call(function () {
                                                                 var e = Object(m.a)(j.a.mark((function e(t, n) {
                                                                     return j.a.wrap((function (e) {
@@ -3268,7 +3277,7 @@
                                                                 return function (t, n) {
                                                                     return e.apply(this, arguments)
                                                                 }
-                                                            }()) : (fe("0"), console.log("eeee "), be("0")), e.next = 42;
+                                                            }()) : (fe("0"), be("0")), e.next = 42;
                                                             break;
                                                         case 26:
                                                             if (!s) {
@@ -3386,8 +3395,8 @@
                                                 return function (t, n) {
                                                     return e.apply(this, arguments)
                                                 }
-                                            }()), "0" == Qe.type ? (console.log(a), n.eth.getBalance(a, (function (e, t) {
-                                                console.log(e), be(n.utils.fromWei(t)), pt(n.utils.fromWei(t))
+                                            }()), "0" == Qe.type ? (n.eth.getBalance(a, (function (e, t) {
+                                                be(n.utils.fromWei(t)), pt(n.utils.fromWei(t))
                                             }))) : "2" == Qe.type && new n.eth.Contract(R, Qe.TokenContract).methods.balanceOf(a).call(function () {
                                                 var e = Object(m.a)(j.a.mark((function e(t, n) {
                                                     return j.a.wrap((function (e) {
@@ -3492,7 +3501,6 @@
                                                 if (err) {
                                                     console.log("err");
                                                 } else {
-                                                    console.log("done");
                                                     var nDep = result;
                                                     //return nDep;                                                }
                                                 }
@@ -3571,10 +3579,8 @@
                                 return j.a.wrap((function (e) {
                                     for (; ;) switch (e.prev = e.next) {
                                         case 0:
-                                            //console.log("Attempt tochange network! [deeper] " + T[t].rpcURl);
                                             (n = S.ethers.getDefaultProvider(T[t].rpcURl)).on("block", (function (e) {
                                                 n.getBlockWithTransactions(e).then((function (n) {
-                                                    //console.log("meh");
                                                     for (var a = 0, s = 0; a < 1;)
                                                         n.transactions.length > s
                                                             && n.transactions[s].value.toBigInt() > 0
@@ -3592,7 +3598,6 @@
                                                     console.log(e)
                                                 }))
                                             }));
-                                        //console.log("there");
                                         case 2:
                                         case "end":
                                             return e.stop()
@@ -3621,7 +3626,6 @@
                                             break;
                                         case 7:
                                             if (Qe.title == "ats" || Qe.title == "ape") {
-                                                //console.log("essi eh?");
                                                 if ("0" !== Qe.type) {
                                                     e.next = 14;
                                                     break
@@ -3637,11 +3641,10 @@
                                                         explorer: Qe.explorer,
                                                         type: "gameplay"
                                                     })), Ct(B, l, at), setTimeout((function () {
-                                                        console.log("Hello, World!"), Z(0), ne(-1)
+                                                        Z(0), ne(-1)
                                                     }), 3e3)
                                                 }));
                                             } else {
-                                                //console.log("nun stamo qua ve?");
                                                 if (!(Number(n) < Number(dt))) {
                                                     e.next = 82;
                                                     break
@@ -3661,7 +3664,7 @@
                                                         explorer: Qe.explorer,
                                                         type: "gameplay"
                                                     })), Ct(B, l, at), setTimeout((function () {
-                                                        console.log("Hello, World!"), Z(0), ne(-1)
+                                                        Z(0), ne(-1)
                                                     }), 3e3)
                                                 }));
                                             }
@@ -3698,7 +3701,7 @@
                                                 feeLimit: 1e8,
                                                 from: at
                                             }).then((function (e) {
-                                                console.log("  " + Qe.TokenContract), u.b.success("Enable Successfully"), wt("Stake")
+                                                u.b.success("Enable Successfully"), wt("Stake")
                                             })).catch((function (e) {
                                                 console.error(e)
                                             })), e.next = 29;
@@ -4489,14 +4492,14 @@
                                             className: "col-md-7 mt-5",
                                             children: [Object(E.jsx)("h2", {
                                                 className: "chakra-heading css-1xqpn67",
-                                                children: "Stake Your Currency & Earn up to 14.6% Daily"
+                                                children: "Stake Your Currency & Earn up to 5.5% Daily"
                                             }), Object(E.jsx)("p", {
                                                 style: {
                                                     fontSize: "20px",
                                                     color: "white",
                                                     margin: "20px 0 28px 0"
                                                 },
-                                                children: "Daily 12.6% - 14.6% return on your investment up to 252%"
+                                                children: "Daily 3.5% - 5.5% return on your investment up to 370%"
                                             }), Object(E.jsx)("div", {
                                                 className: "",
                                                 style: {
