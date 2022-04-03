@@ -4161,18 +4161,18 @@
                                     }), Object(E.jsxs)("div", {
                                         className: "not", //gg4vpm
                                         style: { marginBottom: "15px !important", marginTop: "15px !important" },
-                                        children: [Object(E.jsx)("p", {
-                                            className: "chakra-text css-itvw0n",
-                                            children: "Next withdraw in:"
-                                        }), Object(E.jsx)("div", {
-                                            className: "chakra-skeleton css-cdkrf0",
-                                            children: Object(E.jsx)("p", {
-                                                className: "chakra-text css-mhu0er",
-                                                //children: C(r.utils.fromWei(c[4]), 4)
-                                                //children: [secondsToDhms((parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000) - Date.now())]
-                                                children: [secondsToDhms(1650150132 * 1000 - Date.now())]
-                                            })
-                                        })],
+                                        children: (C(c[3], 4) != 0) ? [
+                                            Object(E.jsx)("p", {
+                                                className: "chakra-text css-itvw0n",
+                                                children: "Next withdraw in:"
+                                            }), Object(E.jsx)("div", {
+                                                className: "chakra-skeleton css-cdkrf0",
+                                                children: Object(E.jsx)("p", {
+                                                    className: "chakra-text css-mhu0er",
+                                                    children: [secondsToDhms((parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000) - Date.now())]
+                                                    //children: [secondsToDhms(1650150132 * 1000 - Date.now())]
+                                                })
+                                            })] : null,
                                     }), Object(E.jsxs)("button", {
                                         type: "submit",
                                         style: {
