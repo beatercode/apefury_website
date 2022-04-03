@@ -4170,7 +4170,6 @@
                                                 children: Object(E.jsx)("p", {
                                                     className: "chakra-text css-mhu0er",
                                                     children: [secondsToDhms((parseInt((C(c[3], 4)).replace(/,/g, '')) * 1000) - Date.now())]
-                                                    //children: [secondsToDhms(1650150132 * 1000 - Date.now())]
                                                 })
                                             })] : null,
                                     }), Object(E.jsxs)("button", {
@@ -4413,6 +4412,7 @@
                             }), Object(E.jsx)("div", {
                                 className: "home-stats",
                                 children: [
+                                    /* START OF TIMER SECTION */
                                     Object(E.jsxs)("div", {
                                         className: "row",
                                         children: [
@@ -4482,6 +4482,7 @@
                                             })
                                         ]
                                     }),
+                                    /* END OF TIMER SECTION */
                                     Object(E.jsxs)("div", {
                                         className: "row",
                                         children: [Object(E.jsxs)("div", {

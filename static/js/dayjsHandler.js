@@ -22,4 +22,5 @@ function activateCountdown(element, dateString) {
     //console.log(targetDate);
 }
 
+//activateCountdown(document.getElementById("myCountdown"), "2022-04-10");
 activateCountdown(document.getElementById("myCountdown"), "2022-04-10");
