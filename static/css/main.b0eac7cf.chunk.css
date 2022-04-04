@@ -1041,7 +1041,7 @@ select:focus-visible {
 .links,
 .links:hover {
     color: #fff;
-    text-decoration: none
+    text-decoration: none;
 }
 
 a:focus {

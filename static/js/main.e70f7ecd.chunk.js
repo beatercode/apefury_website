@@ -1837,7 +1837,6 @@
                             blockExplorerUrls: ["https://bscscan.com/"]
                         }]
                     },
-                    */
                     rop: {
                         contract: "0x8522cba06D022e32Bdd87e632A3Ee19148b29153",
                         chainId: "3",
@@ -1906,6 +1905,7 @@
                             blockExplorerUrls: ["https://etherscan.io/"]
                         }]
                     },
+                    */
                     ats: {
                         contract: "0xfb387aEDfC081712000E688B3b79a4334328f2F7",
                         TokenContract: "0x57854f181a2e26df9CD47c56032923f51D88d2bF", // ApeCoin Ropsten Test Address
